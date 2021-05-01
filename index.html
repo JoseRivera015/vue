@@ -76,8 +76,7 @@
 
             },
             variantImage: 'https://gestion.pe/resizer/XhE6iMWeUhV78vwQNgwXL8pwtRY=/314x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/OEGKPKCE3RCRXMFJDPL5LK7OJE.jpg',
-            variantQuantity: 12,
-            variantCart: 0
+            variantQuantity: 12
           },
           {
             variantId: 83783,
@@ -86,8 +85,7 @@
 
             },
             variantImage: 'https://gestion.pe/resizer/JAnxg3zABDQ30phDD4ZwGksDPfY=/314x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/MTAKNCOMFBFB5ND7G7SMSBOKHU.jpg',
-            variantQuantity: 0,
-            variantCart: 0
+            variantQuantity: 0
           }
         ]
 
@@ -96,11 +94,6 @@
     methods: {
       addToCart() {
         this.variants[this.selectedVariant].variantCart += 1
-        this.variants[this.selectedVariant].variantQuantity -= 1
-      },
-      removeFromCart() {
-        this.variants[this.selectedVariant].variantCart -= 1
-        this.variants[this.selectedVariant].variantQuantity += 1
       },
       updateProduct(index) {
         this.selectedVariant = index
@@ -118,9 +111,6 @@
       inStock() {
         return this.variants[this.selectedVariant].variantQuantity
       },
-      cart() {
-        return this.variants[this.selectedVariant].variantCart
-      },
       shipping() {
         if (this.premium) {
           return "Gratis"
@@ -132,7 +122,11 @@
   var app = new Vue({
     el: '#app',
     data: {
-      premiumd: true
+      premiumd: true,
+      cart: 0
+    },
+    methods: {
+        
     }
 
   })
