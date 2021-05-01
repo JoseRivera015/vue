@@ -51,7 +51,7 @@
                 
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item" 
-                      v-for="feature in features">{{feature}}</li>
+                      v-for="detail in details">{{detail}}</li>
                 </ul>
                 <div class="card-body">
                     <button type="button" class="btn btn-primary" v-on:click="addToCart" v-bind:disabled= "!inStock">Al carrito</button>
@@ -64,7 +64,7 @@
         product: 'Zapato',
         productPrice: '$60.00',
         selectedVariant: 0,
-        features: ['cuero reforzado', 'suela de pvc', 'interior acolchado'],
+        details: ['cuero reforzado', 'suela de pvc', 'interior acolchado'],
 
         style: {
           borderColor: 'grey'
