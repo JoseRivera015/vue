@@ -11,9 +11,12 @@
 <body>
   <div id="app" class="container">
     <product :premium="premiumd"></product>
-    <div class="text-muted text-center">
-      Carrito ({{cart}})
+    <div class="card">
+      <div class="card-body text-muted text-center">
+        Carrito ({{cart}})
+      </div>
     </div>
+
 
   </div>
 
@@ -51,7 +54,6 @@
                 </ul>
                 <div class="card-body">
                     <button type="button" class="btn btn-primary" v-on:click="addToCart" v-bind:disabled= "!inStock">Al carrito</button>
-                    <button type="button" class="btn btn-secondary" v-on:click="removeFromCart" :disabled="cart <= 0">Quitar</button>
                 </div>
               </div>
             `,
