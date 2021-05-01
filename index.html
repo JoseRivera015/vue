@@ -45,6 +45,7 @@
                   <button type="button" 
                       class="btn btn-primary p-3 me-1" 
                       v-for="(variant,index) in variants" 
+                      :key="variant.variantId"
                       v-on:mouseover="updateProduct(index)" 
                       v-bind:style="[variant.variantStyle, style]"></button>
                 </div>
