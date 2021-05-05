@@ -35,7 +35,7 @@
     `,
     data() {
       return{
-        title:'Hola José',
+        title:'Titulo ',
         lead:'Texto importante',
         text:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio aliquid, quisquam iste nobis ipsam est dolore esse? Nisi, explicabo. Itaque impedit quis sed animi vel, inventore quaerat aliquam atque beatae?',
         button: {
@@ -55,7 +55,7 @@
             <div class="card-body">
               <h5 class="card-title">{{contact.name}}</h5>
               <p class="card-text">{{contact.info}}</p>
-              <a v-bind:href="contact.link" class="btn btn-primary">{{contact.link}}</a>
+              <a v-for="link in contact.links" v-bind:href="link.href" class="btn btn-primary mx-1">{{link.icon}}</a>
             </div>
           </div>
         </div>
@@ -69,19 +69,33 @@
             pic: 'https://picsum.photos/400/200',
             name: 'Jose Melendez',
             info: 'Solo yo',
-            link: 'https://www.google.com'
+            links: [
+              {
+                icon: 'fb',
+                href: 'https://facebook.com'
+              },
+              {
+                icon: 'linkedin',
+                href: 'https://linkedin.com'
+              }
+            ]
           },
           {
             pic: 'https://picsum.photos/400/200',
             name: 'Carlos Rivera',
             info: 'Yo tambien',
-            link: 'https://www.bing.com'
+            links: []
           },
           {
             pic: 'https://picsum.photos/400/200',
             name: 'Juan Perez',
             info: 'Yo tambien',
-            link: 'https://www.bing.com'
+            links: [
+              {
+                icon: 'twitter',
+                href: 'https://twitter.com'
+              }
+            ]
           } 
         ]
       }
