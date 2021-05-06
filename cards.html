@@ -57,7 +57,7 @@
               <p class="card-text">{{contact.info}}</p>
             </div>  
             <ul class="list-group list-group-flush">
-              <li class="list-group-item text-white bg-dark" v-for="feature in contact.features">{{feature}}</li>
+              <li class="list-group-item text-white bg-dark" v-for="feature in contact.features" :class="style">{{feature}}</li>
             </ul>
             <div class="card-body">  
               <a v-for="link in contact.links" v-bind:href="link.href" class="btn btn-primary mx-1">{{link.icon}}</a>
@@ -103,7 +103,8 @@
               }
             ]
           } 
-        ]
+        ],
+        style: 'list-group-item-light'
       }
     }
   })
