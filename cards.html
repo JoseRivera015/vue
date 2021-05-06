@@ -61,7 +61,7 @@
               <li class="list-group-item text-white bg-dark" v-for="(feature,index) in contact.features" :class="{'fw-bold': index===0}">{{feature}}</li>
             </ul>
             <div class="card-body">  
-              <a v-for="link in contact.links" v-bind:href="link.href" class="btn btn-primary mx-1">
+              <a v-for="link in contact.links" v-bind:href="link.href" class="btn btn-outline-light btn-lg me-2 p-2">
                 <i :class="link.icon"></i>
               </a>
             </div>
@@ -76,7 +76,7 @@
           {
             pic: 'https://picsum.photos/400/200',
             name: 'Jose Melendez',
-            info: 'Solo yo',
+            info: 'una breve descripcion de mi, quierondejar mi huella en el mundo bla bla bla',
             features: ['Estudiante en computacion', 'Estudiante en diseño gráfico'],
             links: [
               {
