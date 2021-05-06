@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
   <style>
     .bg-black{
       background-color: #151515;
@@ -60,7 +61,9 @@
               <li class="list-group-item text-white bg-dark" v-for="(feature,index) in contact.features" :class="{'fw-bold': index===0}">{{feature}}</li>
             </ul>
             <div class="card-body">  
-              <a v-for="link in contact.links" v-bind:href="link.href" class="btn btn-primary mx-1">{{link.icon}}</a>
+              <a v-for="link in contact.links" v-bind:href="link.href" class="btn btn-primary mx-1">
+                <i :class="link.icon"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -77,11 +80,11 @@
             features: ['Estudiante en computacion', 'Estudiante en diseño gráfico'],
             links: [
               {
-                icon: 'fb',
+                icon: 'bi bi-facebook',
                 href: 'https://facebook.com'
               },
               {
-                icon: 'linkedin',
+                icon: 'bi bi-linkedin',
                 href: 'https://linkedin.com'
               }
             ]
@@ -98,7 +101,7 @@
             info: 'Yo tambien',
             links: [
               {
-                icon: 'twitter',
+                icon: 'bi bi-twitter',
                 href: 'https://twitter.com'
               }
             ]
