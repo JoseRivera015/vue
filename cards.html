@@ -25,7 +25,6 @@
         <app-jumbotron></app-jumbotron>
         <news-grid></news-grid>
         <contact-card></contact-card>
-      </div>
     </div>
     <script>
       const jrm = {
@@ -66,7 +65,7 @@
               {
                 pic: 'https://picsum.photos/400/200',
                 name: 'Jose Melendez',
-                info: 'una breve descripcion de mi, quierondejar mi huella en el mundo bla bla bla',
+                info: 'Me considero una persona responsable, optimista, creativa impulsador de metas y desafios prsonales, capaz de vencer los miedos para generar cambios, con capacidad para el trabajo en equipo',
                 features: ['Estudiante en computacion', 'Estudiante en diseño gráfico'],
                 links: [
                   {
@@ -78,35 +77,26 @@
                     href: 'https://linkedin.com'
                   }
                 ]
-              },
-              {
-                pic: 'https://picsum.photos/400/200',
-                name: 'Carlos Rivera',
-                info: 'Yo tambien',
-                links: []
-              },
-              {
-                pic: 'https://picsum.photos/400/200',
-                name: 'Juan Perez',
-                info: 'Yo tambien',
-                links: [
-                  {
-                    icon: 'bi bi-twitter',
-                    href: 'https://twitter.com'
-                  }
-                ]
-              } 
+              }
             ]
           }
         }
       })
       app.component('app-carousel',{
         template: `
-          <div id="carouselExampleSlidesOnly" class="carousel slide mb-2" data-bs-ride="carousel">
+          <div id="carouselExampleControls" class="carousel slide mb-2" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item" v-for="(item, index) in slider" :class="{'active': index === 0}">
                 <img :src="item.image" class="d-block w-100" :alt="item.alt">
               </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
         `,
@@ -114,15 +104,15 @@
           return {
             slider: [
               {
-                image: 'https://picsum.photos/400/200',
+                image: 'https://picsum.photos/400/150',
                 alt: 'Inicio'
               },
               {
-                image: 'https://picsum.photos/400/200',
+                image: 'https://picsum.photos/400/150',
                 alt: 'Sobre mí'
               },
               {
-                image: 'https://picsum.photos/400/200',
+                image: 'https://picsum.photos/400/150',
                 alt: 'Contacto'
               }
             ]
@@ -133,7 +123,7 @@
         template: `
           <h2>Novedades</h2>
           <div class="row">
-            <div v-for="card in cards" class="col-12 col-sm-6">
+            <div v-for="card in cards" class="col-12 col-sm-6 col-md-4 col-xl-3">
               <div class="card bg-dark mb-2">
                 <img :src="card.picture" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -148,6 +138,24 @@
         data() {
           return {
             cards: [
+              {
+                picture: 'https://picsum.photos/300/200',
+                title: 'His Dark Materials',
+                text: 'Cuerpo',
+                button: {
+                  href: '#',
+                  text: 'ver más'
+                }
+              },
+              {
+                picture: 'https://picsum.photos/300/200',
+                title: 'His Dark Materials',
+                text: 'Cuerpo',
+                button: {
+                  href: '#',
+                  text: 'ver más'
+                }
+              },
               {
                 picture: 'https://picsum.photos/300/200',
                 title: 'His Dark Materials',
@@ -181,13 +189,13 @@
         data() {
           return {
             title: 'Bienvenido a JRM Diseño Web',
-            body: 'Es este, mi espacio...'
+            body: 'En éste, mi espacio de internet, demostraré mis capacidades para el diseño y desarrollo web, entre otras cosas. Acompáñame en este viaje de crecimiento personal.'
           }
         }
       })
       app.component('navigation-bar',{
         template: `
-          <nav class="navbar fixed-top navbar-dark bg-dark mb-2">
+          <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark mb-2">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">{{  brand }}</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -196,7 +204,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li v-for="item in nav" class="nav-item">
-                    <a class="nav-link" href="item.link">{{ item.text }}</a>
+                    <a class="nav-link" :href="item.link">{{ item.text }}</a>
                   </li>
                 </ul>
               </div>
@@ -209,15 +217,19 @@
             nav: [
               {
                 link: '#',
-                text: 'Inicio'
+                text: 'Nosotros'
               },
               {
                 link: '#',
-                text: 'Sobre mí'
+                text: 'Garleria'
               },
               {
                 link: '#',
-                text: 'Contacto'
+                text: 'Articulos'
+              },
+              {
+                link: '#',
+                text: 'Proyectos'
               }
             ]
           }
