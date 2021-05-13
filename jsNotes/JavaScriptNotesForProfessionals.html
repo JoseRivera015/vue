@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+	
+  </head>
+  <body>
+  	<div class="container my-4">
+  	  <h1 class="text-center lead display-1">JavaScript</h1>
+  	  <div class="text-center lead">Notes for Professionals</div>
+  	  <h2>Contents</h2>
+<ol>
+    <li>About </li>
+  	    <li><a href="#cap1">Chapter 1: Getting started with JavaScript</a></li>
+    <ol>
+      <li><a href="#cap1.1">Section 1.1: Using console.log()</a></li>
+      <li>Section 1.2: Using the DOM API 4 Section 1.3: Using window.alert()</li>
+	  <li>Section 1.4: Using window.prompt()</li>
+	  <li>Section 1.5: Using window.confirm()</li>
+	  <li>Section 1.6: Using the DOM API (with graphical text: Canvas, SVG, or image file)</li>
+    </ol>	
+	<li>Chapter 2: JavaScript Variable
+      <ol>
+        <li>Section 2.1: Defining a Variable</li>
+        <li> Section 2.2: Using a Variable</li>
+        <li> Section 2.3: Types of Variables</li>
+        <li> Section 2.4: Arrays and Objects</li>
+      </ol>
+    </li>
+    </ol>
+  	  <h2>About</h2>
+  	  <h2 id="cap1">Chapter 1: Getting started with JavaScript</h2>
+  	  <h3 id="cap1.1">Section 1.1: Using console.log()</h3>
+  	  <h4>Introduction</h4>
+  	  <p>All modern web browsers, Node.js as well as almost every other JavaScript environments support writing messages to a console using a suite of logging methods. The most common of these methods is <code>console.log()</code>.</p>
+  	  <p>In a browser environment, the<code> console.log()</code> function is predominantly used for debugging purposes.</p>
+  	  <p>Getting Started Open up the JavaScript Console in your browser, type the following, and press Enter : </p>
+  	  <code>console.log("Hello, World!"); </code>
+  	  <p>This will log the following to the console:</p>
+  	  <code>Hello, World!<br>
+      </code>
+  	  <p>In the example above, the console.log() function prints Hello, World! to the console and returns undefined (shown above in the console output window). This is because console.log() has no explicit return value.<br>
+      </p>
+  	  <h4>Logging variables </h4>
+  	  <p><code>console.log()</code> can be used to log variables of any kind; not only strings. Just pass in the variable that you want to be displayed in the console, for example: </p>
+  	  <code>var foo = "bar";<br>
+      console.log(foo); </code>
+  	  <p>This will log the following to the console:<br>
+      </p>
+  <code>bar</code>
+  <p>If you want to log two or more values, simply separate them with commas. Spaces will be automatically added between each argument during concatenation:</p>
+  <code>var thisVar = 'first value'; <br>
+  var thatVar = 'second value'; <br>
+  console.log("thisVar:", thisVar, "and thatVar:", thatVar);</code>
+  <p>This will log the following to the console:</p>
+  <code>thisVar: first value and thatVar: second value</code>
+  <h4>Placeholders </h4>
+  <p>You can use console.log() in combination with placeholders: </p>
+  <code>var greet = "Hello", who = "World"; <br>
+  console.log("%s, %s!", greet, who); </code>
+  <p>This will log the following to the console:</p>
+  <code>Hello, World! </code>
+  <p>Logging Objects </p>
+  <p>Below we see the result of logging an object. </p>
+  <p>This is often useful for logging JSON responses from API calls.</p>
+  <code> console.log({<br>
+    <code class="ms-4">
+	'Email': '', 
+	<br>
+	'Groups': {}, 
+	<br>
+	'Id': 33, 
+	<br>
+	'IsHiddenInUI': false, 
+	<br>
+	'IsSiteAdmin': false, 
+	<br>
+	'LoginName': 'i:0#.w|virtualdomain\\user2', 
+	<br>
+	'PrincipalType': 1,
+	<br>
+	'Title': 'user2' <br>
+    </code>
+    });<br>
+  </code>
+  </div>
+  	<!-- body code goes here -->
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.3.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.3.1.js"></script>
+  </body>
+</html>
