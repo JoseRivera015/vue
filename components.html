@@ -12,30 +12,50 @@
   <body>
     <div id="app">
         {{ title }}
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
 
+    <app-card :posts="posts"></app-card>
+    <app-btn :button="button"></app-btn>
     </div>
   </body>
   <script>
     const rootComponent = {
       data() {
         return {
-          title: 'hola mundo'
+          title: 'hola mundo',
+          posts: {
+            image: 'https://picsum.photos/200/100',
+            title: 'Mi primer post',
+            text: 'Texto del post',
+            button: {
+              link: '#',
+              text:'Hola'
+            }
+          },
+          button: {
+            link : '#',
+            text: 'hola 2'
+          }
         }
       }
     }
     const app = Vue.createApp(rootComponent)
     app.component('app-btn',{
-      props: ['btn-content']
+      props: ['button'],
       template: `
-        <a class="btn btn-primary" :href="btn-content.href" role="button">{{ btn-content.text }}</a>
+        <a class="btn btn-primary" :href="button.link" role="button">{{ button.text }}</a>
+      `
+    })
+    app.component('app-card',{
+      props: ['posts'],
+      template: `
+        <div class="card" style="width: 18rem;">
+          <img :src="posts.image" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ posts.title }}</h5>
+            <p class="card-text">{{ posts.text }}</p>
+            <app-btn :button="posts.button"></app-btn>
+          </div>
+        </div>
       `
     })
     app.mount('#app')
