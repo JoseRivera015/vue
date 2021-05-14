@@ -12,28 +12,70 @@
   <body>
     <div id="app">
         {{ title }}
-
-    <app-card :posts="posts"></app-card>
-    <app-btn :button="button"></app-btn>
     </div>
   </body>
   <script>
     const rootComponent = {
       data() {
         return {
-          title: 'hola mundo',
-          posts: {
-            image: 'https://picsum.photos/200/100',
-            title: 'Mi primer post',
-            text: 'Texto del post',
-            button: {
-              link: '#',
-              text:'Hola'
+          home: {
+            carousel: {},
+            jumbotron: {},
+            cardsGrid: {}
+          },
+          about: {
+            title: 'Sobre mí',
+            aboutCards: [
+              {
+                pic: 'https://picsum.photos/400/200',
+                name: 'Jose Rivera',
+                info: 'Me considero una persona responsable, optimista, creativa impulsador de metas y desafios prsonales, capaz de vencer los miedos para generar cambios, con capacidad para el trabajo en equipo',
+                features: ['Estudiante en computacion', 'Estudiante en diseño gráfico'],
+                buttons: [
+                  {
+                    icon: 'bi bi-facebook',
+                    link: 'https://facebook.com'
+                  },
+                  {
+                    icon: 'bi bi-linkedin',
+                    link: 'https://linkedin.com'
+                  }
+                ]
+              }
+            ]
+          },
+          gallery: {
+            title: 'Galeria',
+            cards: {
+              image: '...',
+              description: '...'
             }
           },
-          button: {
-            link : '#',
-            text: 'hola 2'
+          posts: {
+            title: 'Artículos',
+            cards: {
+              image: 'https://picsum.photos/200/100',
+              title: 'Mi primer post',
+              text: 'Texto del post',
+              button: {
+                link: '#',
+                text:'Hola'
+              }
+            }
+          },
+          projects: {
+            title: 'proyectos',
+            cards: [
+              {
+                image: 'https://picsum.photos/200/100',
+                title: 'Mi primer post',
+                text: 'Texto del post',
+                button: {
+                  link: '#',
+                  text:'Hola'
+                }
+              }
+            ]
           }
         }
       }
