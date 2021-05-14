@@ -108,6 +108,15 @@
       }
     }
     const app = Vue.createApp(rootComponent)
+    //components
+    app.component('app-icon-btn',{
+      props: ['button']
+      template: `
+        <a :href=" button.link" class="btn btn-outline-light btn-lg me-2 p-2">
+          <i :class="button.icon"></i>
+        </a>
+      `
+    })
     app.component('app-btn',{
       props: ['button'],
       template: `
