@@ -21,6 +21,7 @@
       <app-navbar :navbar="navbar"></app-navbar>
       <router-link to="/">Go to Home</router-link>
       <router-link to="/about">Go to About</router-link>
+      <app-page-home :home="home"></app-page-home>
       <router-view></router-view>
       <app-footer :footer="footer"></app-footer>
     </div>
@@ -295,7 +296,7 @@
           </div>
         `
       })
-      const HomeComponent = app.component('app-page-home',{
+      app.component('app-page-home', {
         props: ['home'],
         template:`
           <div class="container my-3">
@@ -310,7 +311,7 @@
           </div>
         `
       })
-      const AboutComponent = app.component('app-page-about',{
+      app.component('app-page-about', {
         props: ['about'],
         template:`
           <div class="container my-3 d-flex justify-content-center">
@@ -318,15 +319,26 @@
           </div>
         `
       })
+      const Home = {
+          props: ['title'],
+          template: '<div>{{ title }}</div>' 
+          
+      }
+      const About = { template: '<div>About</div>' }
+
       //routing
       const routes = [
         {
           path: '/', 
-          component: HomeComponent 
+          component: Home,
+          props: {
+              title: 'hola'
+          }
         },
         { 
           path: '/about', 
-          component: AboutComponent 
+          component: About,
+          props: true
         }
       ]
       const router = VueRouter.createRouter({
