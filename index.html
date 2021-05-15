@@ -19,9 +19,6 @@
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
       <app-navbar :navbar="navbar"></app-navbar>
-      <router-link to="/">Go to Home</router-link>
-      <router-link to="/about">Go to About</router-link>
-      
       <router-view></router-view>
       <app-footer :footer="footer"></app-footer>
     </div>
@@ -33,10 +30,14 @@
             navbar: {
               brand: 'JRM',
               nav: [
-                {link: '#',  text: 'Nosotros'},
-                {link: '#', text: 'Galeria'},
-                {link: '#', text: 'Articulos'},
-                {link: '#', text: 'Proyectos'}
+                {
+                  to: '/',  
+                  text: 'Inicio'
+                },
+                {
+                  to: '/about', 
+                  text: 'Nosotros'
+                }
               ]
             },
             footer:{
@@ -272,7 +273,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li v-for="item in navbar.nav" class="nav-item">
-                    <a class="nav-link" :href="item.link">{{ item.text }}</a>
+                    <router-link class="nav-link" :to="item.to">{{ item.text }}</router-link>
                   </li>
                 </ul>
               </div>
@@ -514,7 +515,7 @@
           path: '/about', 
           component: About,
           props: {
-            home: data.about
+            about: data.about
           }
         }
       ] 
