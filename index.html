@@ -21,8 +21,8 @@
       <app-navbar :navbar="navbar"></app-navbar>
       <router-link to="/">Go to Home</router-link>
       <router-link to="/about">Go to About</router-link>
-      <app-page-home :home="home"></app-page-home>
       <router-view></router-view>
+      <app-page-home :home="home"></app-page-home>
       <app-footer :footer="footer"></app-footer>
     </div>
     <script>
@@ -320,20 +320,16 @@
         `
       })
       const Home = {
-          props: ['title'],
-          template: '<div>{{ title }}</div>' 
+          template: '<div> home</div>' 
           
       }
-      const About = { template: '<div>About</div>' }
+      const About = { template: '' }
 
       //routing
       const routes = [
         {
           path: '/', 
-          component: Home,
-          props: {
-              title: 'hola'
-          }
+          component: Home
         },
         { 
           path: '/about', 
