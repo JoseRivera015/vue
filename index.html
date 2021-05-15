@@ -453,9 +453,7 @@
       const About = {
         props: ['about'],
         template:`
-          <div class="container my-3 d-flex justify-content-center">
-            <kitchen-sink v-for="card in about.cards" :card="card"></kitchen-sink> 
-          </div>
+          <app-page-about :about="about"></app-page-about>
         `
       }
       const Home = { 
