@@ -22,7 +22,7 @@
       <router-link to="/">Go to Home</router-link>
       <router-link to="/about">Go to About</router-link>
       <router-view></router-view>
-      <app-page-home :home="home"></app-page-home>
+
       <app-footer :footer="footer"></app-footer>
     </div>
     <script>
@@ -319,28 +319,34 @@
           </div>
         `
       })
+      app.component('app-btn-new',{
+        template: `
+          <a class="btn btn-primary" href="#" role="button">Bienvenido</a>
+        `
+      })
       const Home = {
           template: '<div> home</div>' 
           
       }
-      const About = { template: '' }
+      const About = { 
+          template: '<app-btn-new></app-btn-new>'
+      }
 
       //routing
-      const routes = [
+   
+      const router = VueRouter.createRouter({
+        // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
+        history: VueRouter.createWebHashHistory(),
+        routes: [
         {
           path: '/', 
           component: Home
         },
         { 
           path: '/about', 
-          component: About,
-          props: true
+          component: About
         }
-      ]
-      const router = VueRouter.createRouter({
-        // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
-        history: VueRouter.createWebHashHistory(),
-        routes// short for `routes: routes`
+      ]// short for `routes: routes`
       })
       app.use(router)
       app.mount('#app')
