@@ -478,7 +478,14 @@
       
       
       
-      const About = { template: '<div>Home</div>' }
+      const About = {
+        props: ['about'],
+        template:`
+          <div class="container my-3 d-flex justify-content-center">
+            <kitchen-sink v-for="card in about.cards" :card="card"></kitchen-sink> 
+          </div>
+        `
+      }
       const Home = { 
         props: ['home'],
         template:`
@@ -498,7 +505,7 @@
       const routes = [
         { 
           path: '/', 
-          component: Home 
+          component: Home,
           props: {
             home: data.home
           }
