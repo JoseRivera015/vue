@@ -52,7 +52,7 @@
                   link: 'https://linkedin.com'
                 }
               ]
-            }/*,
+            },
             home: {
               carousel: [
                 {
@@ -172,7 +172,7 @@
                   }
                 }
               ]
-            }*/
+            }
           }
         }
       }
@@ -207,6 +207,7 @@
           </div>
         `
       })
+      //other
       app.component('list-group-flush',{
         props: ['item'],
         template: `
@@ -298,6 +299,7 @@
           </div>
         `
       })
+      //pages
       app.component('app-page-home', {
         props: ['home'],
         template:`
@@ -322,130 +324,6 @@
         `
       })
       //routing
-      
-      
-      data = {
-            home: {
-              carousel: [
-                {
-                  image: 'https://picsum.photos/800/300',
-                  alt: ''
-                },
-                {
-                  image: 'https://picsum.photos/800/300',
-                  alt: ''
-                }
-              ],
-              intro: {
-                title: 'Bienvenido a JRM Diseño Web',
-                text: 'En éste, mi espacio de internet, demostraré mis capacidades para el diseño y desarrollo web, entre otras cosas. Acompáñame en este viaje de crecimiento personal.'
-              },
-              cards: [
-                {
-                  image: 'https://picsum.photos/300/200',
-                  alt: '...',
-                  title: 'JavaScript Notes for Professionals',
-                  text: 'Adaptacion del manual de Javascript, en html.',
-                  button: {
-                    link: 'JavaScriptNotesForProfessionals.html',
-                    text: 'Ver más'
-                  }
-                },
-                {
-                  image: 'https://picsum.photos/200/100',
-                  alt: '...',
-                  title: 'Mi primer post',
-                  text: 'Texto del post',
-                  button: {
-                    link: '#',
-                    text:'Adiós'
-                  }
-                },
-                {
-                  image: 'https://picsum.photos/200/100',
-                  alt: '...',
-                  title: 'Mi segundo post',
-                  text: 'Texto del post',
-                  button: {
-                    link: '#',
-                    text:'Adiós'
-                  }
-                },
-                {
-                  image: 'https://picsum.photos/200/100',
-                  alt: '...',
-                  title: 'Mi tercer post',
-                  text: 'Texto del post',
-                  button: {
-                    link: '#',
-                    text:'Adiós'
-                  }
-                }
-              ]
-            },
-            about: {
-              title: 'Sobre mí',
-              cards: [
-                {
-                  image: 'https://picsum.photos/400/200',
-                  alt: 'yo',
-                  title: 'Jose Rivera',
-                  text: 'Me considero una persona responsable, optimista, creativa impulsador de metas y desafios prsonales, capaz de vencer los miedos para generar cambios, con capacidad para el trabajo en equipo',
-                  list: ['Estudiante en computacion', 'Estudiante en diseño gráfico'],
-                  buttons: [
-                    {
-                      icon: 'bi bi-facebook',
-                      link: 'https://facebook.com'
-                    },
-                    {
-                      icon: 'bi bi-linkedin',
-                      link: 'https://linkedin.com'
-                    }
-                  ]
-                }
-              ]
-            },
-            gallery: {
-              title: 'Galeria',
-              cards: [
-                {
-                  image: '...',
-                  alt: '...',
-                  description: '...'
-                }
-              ]
-            },
-            posts: {
-              title: 'Artículos',
-              cards: [
-                {
-                  image: 'https://picsum.photos/200/100',
-                  alt: '...',
-                  title: 'Mi primer post',
-                  text: 'Texto del post',
-                  button: {
-                    link: '#',
-                    text:'Hola'
-                  }
-                }
-              ]
-            },
-            projects: {
-              title: 'Proyectos',
-              cards: [
-                {
-                  image: 'https://picsum.photos/200/100',
-                  alt: '...',
-                  title: 'Mi primer post',
-                  text: 'Texto del post',
-                  button: {
-                    link: '#',
-                    text:'Hola'
-                  }
-                }
-              ]
-            }
-          }
       const router = VueRouter.createRouter({
         history: VueRouter.createWebHashHistory(),
         routes:  [
@@ -458,7 +336,7 @@
               `
             },
             props: {
-              home: data.home
+              home: rootComponent.data().home
             }
           },
           { 
@@ -470,7 +348,7 @@
               `
             },
             props: {
-              about: data.about
+              about: rootComponent.data().about
             }
           }
         ] 
