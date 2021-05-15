@@ -446,51 +446,34 @@
               ]
             }
           }
-        
-      
-      
-      
-      const About = {
-        props: ['about'],
-        template:`
-          <app-page-about :about="about"></app-page-about>
-        `
-      }
-      const Home = { 
-        props: ['home'],
-        template:`
-          <div class="container my-3">
-            <app-carousel :carousel="home.carousel"></app-carousel>
-            <app-jumbotron :jumbotron="home.intro"></app-jumbotron>
-            <h2>Novedades</h2>
-            <div class="row">
-              <div v-for="card in home.cards" class="col-12 col-sm-6 col-md-4 col-xl-3">
-                <app-card :card="card" class="mb-2"></app-card>
-              </div>
-            </div>   
-          </div>
-        `
-      }
-
-      const routes = [
-        { 
-          path: '/', 
-          component: Home,
-          props: {
-            home: data.home
-          }
-        },
-        { 
-          path: '/about', 
-          component: About,
-          props: {
-            about: data.about
-          }
-        }
-      ] 
       const router = VueRouter.createRouter({
         history: VueRouter.createWebHashHistory(),
-        routes
+        routes:  [
+          { 
+            path: '/', 
+            component: { 
+              props: ['home'],
+              template:`
+              <app-page-home :home="home"></app-page-home>
+              `
+            },
+            props: {
+              home: data.home
+            }
+          },
+          { 
+            path: '/about', 
+            component: {
+              props: ['about'],
+              template:`
+                <app-page-about :about="about"></app-page-about>
+              `
+            },
+            props: {
+              about: data.about
+            }
+          }
+        ] 
       })
       app.use(router)
       app.mount('#app')
