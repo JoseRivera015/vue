@@ -18,16 +18,15 @@
   </head>
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
-      <app-navbar :navbar="root.navbar"></app-navbar>
-      <router-view :page="root"></router-view>
-      <app-footer :footer="root.footer"></app-footer>
+      <app-navbar :navbar="navbar"></app-navbar>
+      <router-view :page="$data"></router-view>
+      <app-footer :footer="footer"></app-footer>
     </div>
   
     <script>
       const rootComponent = {
         data() {
           return {
-              root:{
             navbar: {
               brand: 'JRM',
               nav: [
@@ -174,7 +173,6 @@
                 }
               ]
             }
-          }
           }
         }
       }
