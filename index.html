@@ -330,6 +330,7 @@
           { 
             path: '/', 
             component: { 
+              name: 'router-home'
               props: ['page'],
               template:`
               <app-page-home :home="page.home"></app-page-home>
@@ -339,6 +340,7 @@
           { 
             path: '/about', 
             component: {
+              name: 'router-about'
               props: ['page'],
               template:`
                 <app-page-about :about="page.about"></app-page-about>
