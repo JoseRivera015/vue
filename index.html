@@ -19,7 +19,7 @@
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
       <app-navbar :navbar="navbar"></app-navbar>
-      <router-view :page="home"></router-view>
+      <router-view></router-view>
       <app-footer :footer="footer"></app-footer>
     </div>
   
@@ -33,11 +33,11 @@
                 {
                   to: '/',  
                   text: 'Inicio'
-                },
+                }/*,
                 {
                   to: '/aborut', 
                   text: 'Nosotros'
-                }
+                }*/
               ]
             },
             footer:{
@@ -329,19 +329,17 @@
         routes:  [
           { 
             path: '/', 
-            component: { 
-              props: ['page'],
+            component: {
               template:`
-              <app-page-home :home="page"></app-page-home>
+               <app-page-home :home="page"></app-page-home>
               `
             }
           },
           { 
-            path: '/aborut', 
+            path: '/about', 
             component: {
-              props: ['page'],
               template:`
-                <app-page-about :about="page"></app-page-about>
+                <app-page-about></app-page-about>
               `
             },
             props: {
