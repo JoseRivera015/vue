@@ -18,15 +18,16 @@
   </head>
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
-      <app-navbar :navbar="navbar"></app-navbar>
-      <router-view :page="home"></router-view>
-      <app-footer :footer="footer"></app-footer>
+      <app-navbar :navbar="root.navbar"></app-navbar>
+      <router-view :page="root"></router-view>
+      <app-footer :footer="root.footer"></app-footer>
     </div>
   
     <script>
       const rootComponent = {
         data() {
           return {
+              root:{
             navbar: {
               brand: 'JRM',
               nav: [
@@ -173,6 +174,7 @@
                 }
               ]
             }
+          }
           }
         }
       }
@@ -332,7 +334,7 @@
             component: { 
               props: ['page'],
               template:`
-              <app-page-home :home="page"></app-page-home>
+              <app-page-home :home="page.home"></app-page-home>
               `
             }
           },
@@ -341,7 +343,7 @@
             component: {
               props: ['page'],
               template:`
-                <app-page-about :about="page"></app-page-about>
+                <app-page-about :about="page.about"></app-page-about>
               `
             }
           }
