@@ -19,7 +19,7 @@
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
       <app-navbar :navbar="navbar"></app-navbar>
-      <router-view :home="home"></router-view>
+      <router-view :page="home"></router-view>
       <app-footer :footer="footer"></app-footer>
     </div>
   
@@ -330,18 +330,18 @@
           { 
             path: '/', 
             component: { 
-              props: ['home'],
+              props: ['page'],
               template:`
-              <app-page-home :home="home"></app-page-home>
+              <app-page-home :home="page"></app-page-home>
               `
             }
           },
           { 
             path: '/about', 
             component: {
-              props: ['about'],
+              props: ['page'],
               template:`
-                <app-page-about :about="about"></app-page-about>
+                <app-page-about :about="page"></app-page-about>
               `
             },
             props: {
