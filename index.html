@@ -28,6 +28,7 @@
       const rootComponent = {
         data() {
           return {
+            brand: 'JKM' ,
             navbar: {
               brand: 'JRM',
               nav: [
@@ -113,26 +114,6 @@
               ]
             },
             about: {
-              title: 'Sobre mí',
-              cards: [
-                {
-                  image: 'https://picsum.photos/400/200',
-                  alt: 'yo',
-                  title: 'Jose Carlos Rivera',
-                  text: 'Me considero una persona responsable, optimista, creativa impulsador de metas y desafios prsonales, capaz de vencer los miedos para generar cambios, con capacidad para el trabajo en equipo',
-                  list: ['Estudiante en computacion', 'Estudiante en diseño gráfico'],
-                  buttons: [
-                    {
-                      icon: 'bi bi-facebook',
-                      link: 'https://facebook.com'
-                    },
-                    {
-                      icon: 'bi bi-linkedin',
-                      link: 'https://linkedin.com'
-                    }
-                  ]
-                }
-              ]
             },
             gallery: {
               title: 'Galeria',
@@ -174,6 +155,11 @@
                 }
               ]
             }
+          }
+        },
+        computed: {
+          title() {
+            return this.brand + ' 2020'
           }
         }
       }
@@ -319,12 +305,12 @@
       })
       //pages
       app.component('app-page-home', {
-        props: ['home'],
+        props: ['home', 'brand'],
         template:`
           <div class="container my-3">
             <app-carousel :carousel="home.carousel"></app-carousel>
             <app-jumbotron :jumbotron="home.intro"></app-jumbotron>
-            <h2>Novedades</h2>
+            <h2>Novedades {{brand}}</h2>
             <div class="row">
               <div v-for="card in home.cards" class="col-12 col-sm-6 col-md-4 col-xl-3">
                 <app-card :card="card" class="mb-2"></app-card>
@@ -334,12 +320,35 @@
         `
       })
       app.component('app-page-about', {
-        props: ['about'],
+        
         template:`
           <div class="container my-3 d-flex justify-content-center">
-            <kitchen-sink v-for="card in about.cards" :card="card"></kitchen-sink> 
+            <kitchen-sink v-for="card in cards" :card="card"></kitchen-sink> 
           </div>
-        `
+        `,
+        data: {
+                        title: 'Sobre mí',
+              cards: [
+                {
+                  image: 'https://picsum.photos/400/200',
+                  alt: 'yo',
+                  title: 'Jose Carlos Rivera',
+                  text: 'Me considero una persona responsable, optimista, creativa impulsador de metas y desafios prsonales, capaz de vencer los miedos para generar cambios, con capacidad para el trabajo en equipo',
+                  list: ['Estudiante en computacion', 'Estudiante en diseño gráfico'],
+                  buttons: [
+                    {
+                      icon: 'bi bi-facebook',
+                      link: 'https://facebook.com'
+                    },
+                    {
+                      icon: 'bi bi-linkedin',
+                      link: 'https://linkedin.com'
+                    }
+                  ]
+                }
+              ]
+
+        }
       })
       //routing
       const router = VueRouter.createRouter({
