@@ -326,28 +326,29 @@
             <kitchen-sink v-for="card in cards" :card="card"></kitchen-sink> 
           </div>
         `,
-        data: {
-                        title: 'Sobre mí',
-              cards: [
-                {
-                  image: 'https://picsum.photos/400/200',
-                  alt: 'yo',
-                  title: 'Jose Carlos Rivera',
-                  text: 'Me considero una persona responsable, optimista, creativa impulsador de metas y desafios prsonales, capaz de vencer los miedos para generar cambios, con capacidad para el trabajo en equipo',
-                  list: ['Estudiante en computacion', 'Estudiante en diseño gráfico'],
-                  buttons: [
-                    {
-                      icon: 'bi bi-facebook',
-                      link: 'https://facebook.com'
-                    },
-                    {
-                      icon: 'bi bi-linkedin',
-                      link: 'https://linkedin.com'
-                    }
-                  ]
-                }
-              ]
-
+        data() {
+          return{
+            title: 'Sobre mí',
+            cards: [
+              {
+                image: 'https://picsum.photos/400/200',
+                alt: 'yo',
+                title: 'Jose Carlos Rivera',
+                text: 'Me considero una persona responsable, optimista, creativa impulsador de metas y desafios prsonales, capaz de vencer los miedos para generar cambios, con capacidad para el trabajo en equipo',
+                list: ['Estudiante en computacion', 'Estudiante en diseño gráfico'],
+                buttons: [
+                  {
+                    icon: 'bi bi-facebook',
+                    link: 'https://facebook.com'
+                  },
+                  {
+                    icon: 'bi bi-linkedin',
+                    link: 'https://linkedin.com'
+                  }
+                ]
+              }
+            ]
+          }
         }
       })
       //routing
