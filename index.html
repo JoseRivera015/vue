@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <title>JRM Diseño WEB</title>
+    <title>JRM Diseño Web</title>
     <style>
       .bg-black{
         background: black;
@@ -27,7 +27,7 @@
       const rootComponent = {
         data() {
           return {
-            brand: 'JKM' ,
+            brand: 'JRM' ,
             gallery: {
               title: 'Galeria',
               cards: [
@@ -215,7 +215,7 @@
             <div class="container py-2">
               <div class="row justify-content-between align-items-center">
                 <div class="col d-flex justify-content-start">
-                  {{ shared.brand }}
+                  {{ brand }}
                 </div>
                 <div class="col d-flex justify-content-end">
                   <app-btn-icon v-for='item in links' :button="item" class="me-2"></app-btn-icon>
@@ -228,7 +228,7 @@
           return {
             links: [
               {
-                icon: 'bi bi-facebook',
+                icon: 'bi bi-google',
                 link: 'https://facebook.com'
               },
               {
@@ -239,8 +239,8 @@
           }
         },
         computed: {
-          brando() {
-            return shared.brand + ' 2020'
+          brand() {
+            return this.shared.brand + ' - ' + new  Date().getFullYear()
           }
         }
       })
