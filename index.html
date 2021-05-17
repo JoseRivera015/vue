@@ -175,6 +175,11 @@
               ]
             }
           }
+        },
+        computed: {
+          linktype(link) {
+            return link
+          }
         }
       }
       const app = Vue.createApp(rootComponent)
