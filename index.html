@@ -19,7 +19,7 @@
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
       <app-navbar :navbar="navbar"></app-navbar>
-      <router-view :common="this"></router-view>
+      <router-view :shared="this"></router-view>
    
       <app-footer :footer="footer"></app-footer>
     </div>
@@ -320,7 +320,7 @@
         `
       })
       app.component('app-page-about', {
-        props: ['common'],
+        props: ['shared'],
         template:`
           <div class="container my-3 d-flex justify-content-center">
             <kitchen-sink v-for="card in cards" :card="card"></kitchen-sink> 
