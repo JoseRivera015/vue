@@ -181,21 +181,20 @@
       //components
       //buttons
       app.component('app-link',{
-        props: ['link','type'],
+        props: ['link'],
         template: `
-          <router-link v-if="button.link.includes('http')" :to="link">
-            <slot></slot>
-          </router-link>
-          <a v-else :href="link">
+          <a  v-if="link.includes('http') || !link.substring(0,1).includes('/')" :href="link">
             <slot></slot>
           </a>
+          <router-link v-else :to="link">
+            <slot></slot>
+          </router-link>          
         `
       })
       app.component('app-btn-icon',{
         props: ['button'],
         template: `
           <app-link :link="button.link"
-          :type="! ? 'internal':'internal'"
           class="btn btn-outline-light">
             <i :class="button.icon"></i>
           </app-link>
@@ -204,7 +203,7 @@
       app.component('app-btn',{
         props: ['button'],
         template: `
-          <app-link :type="button.link.includes('http') ? 'external':'internal'" class="btn btn-primary" :link="button.link" role="button">{{ button.text }}</app-link>
+          <app-link class="btn btn-primary" :link="button.link" role="button">{{ button.text }}</app-link>
         `
       })
       //cards
