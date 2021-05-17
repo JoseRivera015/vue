@@ -18,10 +18,9 @@
   </head>
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
-      <app-navbar :navbar="navbar"></app-navbar>
+      <app-navbar :shared="this"></app-navbar>
       <router-view :shared="this"></router-view>
-   
-      <app-footer :footer="footer"></app-footer>
+      <app-footer :shared="this"></app-footer>
     </div>
   
     <script>
@@ -29,92 +28,6 @@
         data() {
           return {
             brand: 'JKM' ,
-            navbar: {
-              brand: 'JRM',
-              nav: [
-                {
-                  to: '/',  
-                  text: 'Inicio'
-                },
-                {
-                  to: '/about', 
-                  text: 'Nosotros'
-                }
-              ]
-            },
-            footer:{
-              brand: 'Creado con Vue y Bootstrap',
-              links: [
-                {
-                  icon: 'bi bi-facebook',
-                  link: 'https://facebook.com'
-                },
-                {
-                  icon: 'bi bi-linkedin',
-                  link: 'https://linkedin.com'
-                }
-              ]
-            },
-            home: {
-              carousel: [
-                {
-                  image: 'https://picsum.photos/800/300',
-                  alt: ''
-                },
-                {
-                  image: 'https://picsum.photos/800/300',
-                  alt: ''
-                }
-              ],
-              intro: {
-                title: 'Bienvenido a JRM Diseño Web',
-                text: 'En éste, mi espacio de internet, demostraré mis capacidades para el diseño y desarrollo web, entre otras cosas. Acompáñame en este viaje de crecimiento personal.'
-              },
-              cards: [
-                {
-                  image: 'https://picsum.photos/300/200',
-                  alt: '...',
-                  title: 'JavaScript Notes for Professionals',
-                  text: 'Adaptacion del manual de Javascript, en html.',
-                  button: {
-                    link: 'JavaScriptNotesForProfessionals.html',
-                    text: 'Ver más'
-                  }
-                },
-                {
-                  image: 'https://v3.vuejs.org/logo.png',
-                  alt: '...',
-                  title: 'Vue',
-                  text: 'The Progressive JavaScript Framework',
-                  button: {
-                    link: 'https://v3.vuejs.org/',
-                    text:'Ir al sitio'
-                  }
-                },
-                {
-                  image: 'https://getbootstrap.com/docs/5.0/assets/img/bootstrap-icons@2x.png',
-                  alt: '...',
-                  title: 'Bootstrap',
-                  text: 'Framework de CSS',
-                  button: {
-                    link: 'https://getbootstrap.com/',
-                    text:'Ir al sitio'
-                  }
-                },
-                {
-                  image: 'https://picsum.photos/200/100',
-                  alt: '...',
-                  title: 'Mi tercer post',
-                  text: 'Texto del post',
-                  button: {
-                    link: '/about',
-                    text:'Adiós'
-                  }
-                }
-              ]
-            },
-            about: {
-            },
             gallery: {
               title: 'Galeria',
               cards: [
@@ -155,11 +68,6 @@
                 }
               ]
             }
-          }
-        },
-        computed: {
-          title() {
-            return this.brand + ' 2020'
           }
         }
       }
@@ -267,52 +175,85 @@
         `
       })
       app.component('app-navbar',{
-        props:['navbar'],
+        props:['shared'],
         template: `
           <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark mb-2">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">{{ navbar.brand }}</a>
+              <a class="navbar-brand" href="#">{{ shared.brand }}</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li v-for="item in navbar.nav" class="nav-item">
+                  <li v-for="item in nav" class="nav-item">
                     <router-link class="nav-link" :to="item.to">{{ item.text }}</router-link>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
-        `
+        `,
+        data() {
+          return {
+            nav: [
+              {
+                to: '/',  
+                text: 'Inicio'
+              },
+              {
+                to: '/about', 
+                text: 'Nosotros'
+              }
+            ]
+          }
+        }
       })
       app.component('app-footer',{
-        props: ['footer'],
+        props: ['shared'],
         template:`
           <div class="bg-dark">
             <div class="container py-2">
               <div class="row justify-content-between align-items-center">
                 <div class="col d-flex justify-content-start">
-                  {{ footer.brand }}
+                  {{ shared.brand }}
                 </div>
                 <div class="col d-flex justify-content-end">
-                  <app-btn-icon v-for='item in footer.links' :button="item" class="me-2"></app-btn-icon>
+                  <app-btn-icon v-for='item in links' :button="item" class="me-2"></app-btn-icon>
                 </div>
               </div>
             </div>
           </div>
-        `
+        `,
+        data() {
+          return {
+            links: [
+              {
+                icon: 'bi bi-facebook',
+                link: 'https://facebook.com'
+              },
+              {
+                icon: 'bi bi-linkedin',
+                link: 'https://linkedin.com'
+              }
+            ]
+          }
+        },
+        computed: {
+          brando() {
+            return shared.brand + ' 2020'
+          }
+        }
       })
       //pages
       app.component('app-page-home', {
-        props: ['home'],
+        props: ['shared'],
         template:`
           <div class="container my-3">
-            <app-carousel :carousel="home.carousel"></app-carousel>
-            <app-jumbotron :jumbotron="home.intro"></app-jumbotron>
+            <app-carousel :carousel="carousel"></app-carousel>
+            <app-jumbotron :jumbotron="intro"></app-jumbotron>
             <h2>Novedades</h2>
             <div class="row">
-              <div v-for="card in home.cards" class="col-12 col-sm-6 col-md-4 col-xl-3">
+              <div v-for="card in cards" class="col-12 col-sm-6 col-md-4 col-xl-3">
                 <app-card :card="card" class="mb-2"></app-card>
               </div>
             </div>   
@@ -320,7 +261,62 @@
         `,
         data() {
           return {
-            
+          carousel: [
+                {
+                  image: 'https://picsum.photos/800/300',
+                  alt: ''
+                },
+                {
+                  image: 'https://picsum.photos/800/300',
+                  alt: ''
+                }
+              ],
+              intro: {
+                title: 'Bienvenido a JRM Diseño Web',
+                text: 'En éste, mi espacio de internet, demostraré mis capacidades para el diseño y desarrollo web, entre otras cosas. Acompáñame en este viaje de crecimiento personal.'
+              },
+              cards: [
+                {
+                  image: 'https://picsum.photos/300/200',
+                  alt: '...',
+                  title: 'JavaScript Notes for Professionals',
+                  text: 'Adaptacion del manual de Javascript, en html.',
+                  button: {
+                    link: 'JavaScriptNotesForProfessionals.html',
+                    text: 'Ver más'
+                  }
+                },
+                {
+                  image: 'https://v3.vuejs.org/logo.png',
+                  alt: '...',
+                  title: 'Vue',
+                  text: 'The Progressive JavaScript Framework',
+                  button: {
+                    link: 'https://v3.vuejs.org/',
+                    text:'Ir al sitio'
+                  }
+                },
+                {
+                  image: 'https://getbootstrap.com/docs/5.0/assets/img/bootstrap-icons@2x.png',
+                  alt: '...',
+                  title: 'Bootstrap',
+                  text: 'Framework de CSS',
+                  button: {
+                    link: 'https://getbootstrap.com/',
+                    text:'Ir al sitio'
+                  }
+                },
+                {
+                  image: 'https://picsum.photos/200/100',
+                  alt: '...',
+                  title: 'Mi tercer post',
+                  text: 'Texto del post',
+                  button: {
+                    link: '/about',
+                    text:'Adiós'
+                  }
+                }
+              ]
           }
         }
       })
@@ -366,7 +362,7 @@
               name: 'router-home',
               props: ['shared'],
               template:`
-              <app-page-home :home="shared.home"></app-page-home>
+              <app-page-home :shared="shared"></app-page-home>
               `
             }
           },
