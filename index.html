@@ -19,7 +19,7 @@
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
       <app-navbar :navbar="navbar"></app-navbar>
-      <router-view :page="this"></router-view>
+      <router-view :common="this"></router-view>
    
       <app-footer :footer="footer"></app-footer>
     </div>
@@ -305,12 +305,12 @@
       })
       //pages
       app.component('app-page-home', {
-        props: ['home', 'brand'],
+        props: ['home'],
         template:`
           <div class="container my-3">
             <app-carousel :carousel="home.carousel"></app-carousel>
             <app-jumbotron :jumbotron="home.intro"></app-jumbotron>
-            <h2>Novedades {{brand}}</h2>
+            <h2>Novedades</h2>
             <div class="row">
               <div v-for="card in home.cards" class="col-12 col-sm-6 col-md-4 col-xl-3">
                 <app-card :card="card" class="mb-2"></app-card>
@@ -320,7 +320,7 @@
         `
       })
       app.component('app-page-about', {
-        
+        props: ['common'],
         template:`
           <div class="container my-3 d-flex justify-content-center">
             <kitchen-sink v-for="card in cards" :card="card"></kitchen-sink> 
@@ -358,9 +358,9 @@
             path: '/', 
             component: { 
               name: 'router-home',
-              props: ['page'],
+              props: ['shared'],
               template:`
-              <app-page-home :home="page.home"></app-page-home>
+              <app-page-home :home="shared.home"></app-page-home>
               `
             }
           },
@@ -368,9 +368,9 @@
             path: '/about', 
             component: {
               name: 'router-about',
-              props: ['page'],
+              props: ['shared'],
               template:`
-                <app-page-about :about="page.about"></app-page-about>
+                <app-page-about :shared="shared"></app-page-about>
               `
             }
           }
