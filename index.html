@@ -183,13 +183,18 @@
       app.component('app-link',{
         props: ['link'],
         template: `
-          <a  v-if="link.includes('http') || !link.substring(0,1).includes('/')" :href="link">
+          <a  v-if="external" :href="link">
             <slot></slot>
           </a>
           <router-link v-else :to="link">
             <slot></slot>
           </router-link>          
         `,
+        computed: {
+          external() {
+            return this.link.includes('http') || !this.link.substring(0,1).includes('/')? true : false
+          }
+        }
       })
       app.component('app-btn-icon',{
         props: ['button'],
