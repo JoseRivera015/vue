@@ -175,11 +175,6 @@
               ]
             }
           }
-        },
-        computed: {
-          linktype(link) {
-            return link
-          }
         }
       }
       const app = Vue.createApp(rootComponent)
@@ -188,11 +183,11 @@
       app.component('app-link',{
         props: ['link','type'],
         template: `
-          <router-link v-if="type===internal :to="link">
-            </slot></slot>
+          <router-link v-if="type==='internal'" :to="link">
+            <slot></slot>
           </router-link>
           <a v-else :href="link">
-            </slot></slot>
+            <slot></slot>
           </a>
         `
       })
@@ -200,7 +195,7 @@
         props: ['button'],
         template: `
           <app-link :link="button.link"
-          :type="button.type"
+          :type="!button.link.includes('http') ? 'internal':'internal'"
           class="btn btn-outline-light">
             <i :class="button.icon"></i>
           </app-link>
@@ -209,7 +204,7 @@
       app.component('app-btn',{
         props: ['button'],
         template: `
-          <app-link class="btn btn-primary" :link="button.link" role="button">{{ button.text }}</app-link>
+          <app-link :type="button.link.includes('http') ? 'external':'internal'" class="btn btn-primary" :link="button.link" role="button">{{ button.text }}</app-link>
         `
       })
       //cards
