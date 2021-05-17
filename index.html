@@ -20,6 +20,7 @@
     <div id="app">
       <app-navbar :navbar="navbar"></app-navbar>
       <router-view :page="$data"></router-view>
+   
       <app-footer :footer="footer"></app-footer>
     </div>
   
@@ -179,18 +180,31 @@
       const app = Vue.createApp(rootComponent)
       //components
       //buttons
+      app.component('app-link',{
+        props: ['link','type'],
+        template: `
+          <router-link v-if="type===internal :to="link">
+            </slot></slot>
+          </router-link>
+          <a v-else :href="link">
+            </slot></slot>
+          </a>
+        `
+      })
       app.component('app-btn-icon',{
         props: ['button'],
         template: `
-          <a :href=" button.link" class="btn btn-outline-light">
+          <app-link :link="button.link"
+          :type="button.type"
+          class="btn btn-outline-light">
             <i :class="button.icon"></i>
-          </a>
+          </app-link>
         `
       })
       app.component('app-btn',{
         props: ['button'],
         template: `
-          <a class="btn btn-primary" :href="button.link" role="button">{{ button.text }}</a>
+          <app-link class="btn btn-primary" :link="button.link" role="button">{{ button.text }}</app-link>
         `
       })
       //cards
