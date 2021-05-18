@@ -20,6 +20,11 @@
     <div id="app">
       <app-navbar :shared="this"></app-navbar>
       <router-view :shared="this"></router-view>
+      
+      <h1>{{ posts[0].title }}</h1>
+      
+      <p v-for="paragraph in posts[0].body">{{ paragraph }}</p>
+      
       <app-footer :shared="this"></app-footer>
     </div>
   
@@ -28,31 +33,22 @@
         data() {
           return {
             brand: 'JRM' ,
-            gallery: {
-              title: 'Galeria',
-              cards: [
-                {
-                  image: '...',
-                  alt: '...',
-                  description: '...'
-                }
-              ]
-            },
-            posts: {
-              title: 'Artículos',
-              cards: [
-                {
-                  image: 'https://picsum.photos/200/100',
-                  alt: '...',
-                  title: 'Mi primer post',
-                  text: 'Texto del post',
-                  button: {
-                    link: '#',
-                    text:'Hola'
+            posts: [
+              {
+                id: 1,
+                title: `Colores...`,
+                body: [
+                  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus eaque quasi tenetur aliquam voluptatum dolores voluptates facere excepturi enim itaque, optio error maxime. Vero est dignissimos libero excepturi laboriosam tempora.`,
+                  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid iure harum minus quidem modi, aut? Facere quisquam similique aliquid tempora. Totam ipsum atque magni labore deleniti quos, ullam perferendis! Autem.`
+                ],
+                images: [
+                  {
+                    image: '...',
+                    alt: '...'
                   }
-                }
-              ]
-            },
+                ]
+              }
+            ],
             projects: {
               title: 'Proyectos',
               cards: [
@@ -351,6 +347,10 @@
             ]
           }
         }
+      })
+      //posts
+      app.component('app-post', {
+        
       })
       //routing
       const router = VueRouter.createRouter({
