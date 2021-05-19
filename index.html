@@ -20,13 +20,6 @@
     <div id="app">
       <app-navbar :shared="this"></app-navbar>
       <router-view :shared="this"></router-view>
-      <div class="container">
-        <h1>Titulo</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id error, laboriosam, quibusdam facere ipsa eaque doloremque sint reprehenderit veniam praesentium tempora et sit repellat deleniti? Blanditiis accusamus molestias quod.</p>
-        <img src="..." alt="...">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id error, laboriosam, quibusdam facere ipsa eaque doloremque sint reprehenderit veniam praesentium tempora et sit repellat deleniti? Blanditiis accusamus molestias quod.</p>
-        <img src="..." alt="">
-      </div>
       <app-footer :shared="this"></app-footer>
     </div>
   
@@ -201,6 +194,10 @@
               {
                 to: '/about', 
                 text: 'Nosotros'
+              },
+              {
+                to: '/lombrices',
+                text: 'lombrices'
               }
             ]
           }
@@ -353,7 +350,13 @@
       //posts
       const lombrices = {
         template: `
-          
+          <div class="container">
+            <h1>Titulo</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id error, laboriosam, quibusdam facere ipsa eaque doloremque sint reprehenderit veniam praesentium tempora et sit repellat deleniti? Blanditiis accusamus molestias quod.</p>
+                <img src="..." alt="...">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id error, laboriosam, quibusdam facere ipsa eaque doloremque sint reprehenderit veniam praesentium tempora et sit repellat deleniti? Blanditiis accusamus molestias quod.</p>
+            <img src="..." alt="">
+          </div>
         `
       }
       //routing
@@ -379,6 +382,10 @@
                 <app-page-about :shared="shared"></app-page-about>
               `
             }
+          },
+          {
+            path: '/lombrices',
+            component: lombrices
           }
         ] 
       })
