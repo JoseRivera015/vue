@@ -20,11 +20,13 @@
     <div id="app">
       <app-navbar :shared="this"></app-navbar>
       <router-view :shared="this"></router-view>
-      
-      <h1>{{ posts[0].title }}</h1>
-      
-      <p v-for="paragraph in posts[0].body">{{ paragraph }}</p>
-      
+      <div class="container">
+        <h1>Titulo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id error, laboriosam, quibusdam facere ipsa eaque doloremque sint reprehenderit veniam praesentium tempora et sit repellat deleniti? Blanditiis accusamus molestias quod.</p>
+        <img src="..." alt="...">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id error, laboriosam, quibusdam facere ipsa eaque doloremque sint reprehenderit veniam praesentium tempora et sit repellat deleniti? Blanditiis accusamus molestias quod.</p>
+        <img src="..." alt="">
+      </div>
       <app-footer :shared="this"></app-footer>
     </div>
   
@@ -349,9 +351,11 @@
         }
       })
       //posts
-      app.component('app-post', {
-        
-      })
+      const lombrices = {
+        template: `
+          
+        `
+      }
       //routing
       const router = VueRouter.createRouter({
         history: VueRouter.createWebHashHistory(),
