@@ -385,7 +385,17 @@
           },
           {
             path: '/lombrices',
-            component: lombrices
+            component: {
+              template: `
+            <div class="container">
+            <h1>Titulo</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id error, laboriosam, quibusdam facere ipsa eaque doloremque sint reprehenderit veniam praesentium tempora et sit repellat deleniti? Blanditiis accusamus molestias quod.</p>
+                <img src="..." alt="...">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam id error, laboriosam, quibusdam facere ipsa eaque doloremque sint reprehenderit veniam praesentium tempora et sit repellat deleniti? Blanditiis accusamus molestias quod.</p>
+            <img src="..." alt="">
+          </div>
+              `
+            }
           }
         ] 
       })
