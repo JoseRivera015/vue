@@ -130,8 +130,8 @@ app.component('app-navbar',{
     location() {
       let path = window.location.pathname
       let cutString = '/vue/'
-      let finalString = path.slice(cutString.length)
-      for (var count = 0, i = 0; i < finalString.length; i++) {
+      let str = path.slice(cutString.length)
+      for (var count = 0, i = 0; i < str.length; i++) {
         if (str[i] === '/')
         count++;
       }
@@ -139,6 +139,7 @@ app.component('app-navbar',{
     }
   },
   methods: {
+
   }
 })
 app.component('app-footer',{
