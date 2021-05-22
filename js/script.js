@@ -127,15 +127,18 @@ app.component('app-navbar',{
     }
   },
   computed: {
-    location() {
-      let path = window.location.pathname
-      let cutString = '/vue/'
-      let str = path.slice(cutString.length)
-      for (var count = 0, i = 0; i < str.length; i++) {
+    location(this.nav[1].link) {
+      let prelink = '../'
+      let stringToCut = '/vue/'
+      let str =  window.location.pathname.slice(stringToCut.length)
+      for (count = 0, i = 0; i < str.length; i++) {
         if (str[i] === '/')
-        count++;
+        count++
       }
-      return count;
+      for (i = 0; i < count; i++) {
+        link = prelink + link
+      }
+      return link
     }
   },
   methods: {
