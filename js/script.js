@@ -129,7 +129,8 @@ app.component('app-navbar',{
   computed: {
     location() {
       let path = window.location.pathname
-      return path.slice(4)
+      let cutString = '/vue/'
+      return path.slice(cutString.lenght + 1)
     }
   }
 })
