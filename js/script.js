@@ -36,6 +36,17 @@ app.component('app-card',{
     </div>
   `
 })
+app.component('app-simple-card',{
+  props: ['card'],
+  template: `
+    <div class="card bg-dark">
+      <div class="card-body">
+        <a :href="card.link" class="card-title">{{ card.title }}</a>
+        <p class="card-text">{{ card.text }}</p>
+      </div>
+    </div>
+  `
+})
       //other
 app.component('list-group-flush',{
   props: ['item'],
