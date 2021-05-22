@@ -14,11 +14,22 @@
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
       <app-navbar></app-navbar>
+      <app-simple-card :card="card"></app-simple-card>
       <app-footer></app-footer>
     </div>
     <script>
       
-      const rootComponent = {}
+      const rootComponent = {
+        data() {
+          return {
+            card: {
+              title: 'title',
+              text: 'text',
+              link: '#'
+            }
+          }
+        }
+      }
       const app = Vue.createApp(rootComponent)
     </script>
     <script src="../js/script.js"></script>
