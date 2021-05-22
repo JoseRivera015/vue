@@ -128,7 +128,7 @@ app.component('app-navbar',{
   },
   computed: {
     location() {
-      let href = location.pathname
+      let href = window.location.pathname
       return href
     }
   }
