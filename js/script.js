@@ -41,9 +41,12 @@ app.component('app-simple-card',{
   template: `
     <div class="card bg-dark">
       <div class="card-body">
-        <a :href="card.link" class="card-title">{{ card.title }}</a>
+        <a :href="card.link" class="card-title h3">{{ card.title }}</a>
         <p class="card-text">{{ card.text }}</p>
       </div>
+      <div class="card-footer text-muted">
+          {{ card.date }}
+        </div>
     </div>
   `
 })
@@ -52,8 +55,25 @@ app.component('list-group-flush',{
   props: ['item'],
   template: `
     <ul class="list-group list-group-flush">
-      <li class="list-group-item bg-dark text-light">{{ item }}</li>
+      <li class="list-group-item bg-dark text-light">
+      </li>
     </ul>
+  `
+})
+app.component('list-group-card',{
+  props: ['card'],
+  template: `
+  <div :card="card" class="card bg-dark">
+    <div class="card-body">
+      <h5 class="card-title fw-bold h2">{{ card.title }}</h5>
+      <p class="card-text">{{ card.body }}</p>
+    </div>
+    <ul class="list-group list-group-flush" >
+      <li class="list-group-item bg-dark text-light" v-for="(item, index) in card.list">
+      <a :href="item.link">{{ item.text }}</a>
+      </li>
+    </ul>
+  </div>
   `
 })
 app.component('kitchen-sink',{

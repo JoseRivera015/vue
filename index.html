@@ -15,12 +15,16 @@
     <div id="app">
       <app-navbar></app-navbar>
       <div class="container my-3">
-        <app-carousel :carousel="carousel"></app-carousel>
+
         <app-jumbotron :jumbotron="intro"></app-jumbotron>
-        <h2>Novedades</h2>
         <div class="row">
-          <div v-for="card in cards" class="col-12 col-sm-6 col-md-4 col-xl-3">
-            <app-card :card="card" class="mb-2"></app-card>
+          <div class="col-lg-8">
+            <h2 class="fw-bold">Novedades</h2>
+            <p>Read more at hacks.mozilla.org</p>
+            <app-simple-card v-for="card in cards" :card="card" class="mb-3"></app-simple-card>
+          </div>
+          <div class="col-lg-4">
+            <list-group-card :card="about"></list-group-card>
           </div>
         </div>   
       </div>
@@ -47,46 +51,54 @@
             },
             cards: [
              {
-                image: 'https://picsum.photos/300/200',
-                alt: '...',
                 title: 'JavaScript Notes for Professionals',
                 text: 'Adaptacion del manual de Javascript, en html.',
-                button: {
-                  link: 'JavaScriptNotesForProfessionals.html',
-                  text: 'Ver más'
-                }
+                link: 'posts/JavaScriptNotesForProfessionals.html',
+                date : 'hoy'
               },
               {
-                image: 'https://picsum.photos/300/200',
-                alt: '...',
-                title: 'JavaScript Notes for Professionals',
-                text: 'Test',
-                button: {
-                  link: 'posts/test.html',
-                  text: 'Ver más'
-                }
+                title: 'Test',
+                text: 'Pagina de prueba de experimentos',
+                link: 'posts/test.html',
+                date : 'hoy'
               },
               {
-                image: 'https://v3.vuejs.org/logo.png',
-                alt: '...',
                 title: 'Vue',
                 text: 'The Progressive JavaScript Framework',
-                button: {
-                  link: 'https://v3.vuejs.org/',
-                  text:'Ir al sitio'
-                }
+                link: 'https://v3.vuejs.org/',
+                date : 'hoy'
+
+
               },
               {
-                image: 'https://getbootstrap.com/docs/5.0/assets/img/bootstrap-icons@2x.png',
-                alt: '...',
                 title: 'Bootstrap',
                 text: 'Framework de CSS',
-                button: {
-                  link: 'https://getbootstrap.com/',
-                  text:'Ir al sitio'
-                }
+                link: 'https://getbootstrap.com/',
+                date : 'hoy'
               }
-            ]
+            ],
+            about: {
+              title: 'Jose Rivera',
+              body: 'Desarrollador front-end ',
+              list: [
+                {
+                  link: '#',
+                  text: 'Getting started'
+                },
+                {
+                  link: '#',
+                  text: 'Contributing to MDN content'
+                },
+                {
+                  link: '#',
+                  text: 'Contributing to the MDN codebase'
+                },
+                {
+                  link: '#',
+                  text: 'Updating browser compatibility data'
+                }
+              ]
+            }
           }
         }
       }

@@ -14,7 +14,22 @@
   <body class="bg-black text-light" style="padding-top:3rem">
     <div id="app">
       <app-navbar></app-navbar>
-      <app-simple-card :card="card"></app-simple-card>
+      <div class="container my-3">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2 class="fw-bold">Hacks Blog</h2>
+            <p>Read more at hacks.mozilla.org</p>
+            <app-simple-card v-for="card in cards" :card="card" class="mb-3"></app-simple-card>
+          </div>
+          <div class="col-lg-4">
+            <list-group-card :card="about"></list-group-card>
+          </div>
+        </div>
+        
+        
+
+      </div>
+      
       <app-footer></app-footer>
     </div>
     <script>
@@ -22,10 +37,53 @@
       const rootComponent = {
         data() {
           return {
-            card: {
-              title: 'title',
-              text: 'text',
-              link: '#'
+            cards: [
+              {
+                title: 'Improving Firefox stability on Linux',
+                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
+                link: '#',
+                date: 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
+              },
+              {
+                title: 'Improving Firefox stability on Linux',
+                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
+                link: '#',
+                date: 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
+              },
+              {
+                title: 'Improving Firefox stability on Linux',
+                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
+                link: '#',
+                date: 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
+              },
+              {
+                title: 'Improving Firefox stability on Linux',
+                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
+                link: '#',
+                date: 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
+              }
+            ],
+            about: {
+              title: 'Help improve MDN Web Docs',
+              body: 'All parts of MDN (docs and the site itself) are created by an open community of developers. Please join us! Pick one of these ways to help:',
+              list: [
+                {
+                  link: '#',
+                  text: 'Getting started'
+                },
+                {
+                  link: '#',
+                  text: 'Contributing to MDN content'
+                },
+                {
+                  link: '#',
+                  text: 'Contributing to the MDN codebase'
+                },
+                {
+                  link: '#',
+                  text: 'Updating browser compatibility data'
+                }
+              ]
             }
           }
         }
