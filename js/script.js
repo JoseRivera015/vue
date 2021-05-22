@@ -122,6 +122,10 @@ app.component('app-navbar',{
         {
           link: 'about.html', 
           text: 'Nosotros'
+        },
+        {
+          link: 'contact.html'
+          text: 'contacto'
         }
       ]
     }
