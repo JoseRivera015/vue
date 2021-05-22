@@ -143,7 +143,6 @@ app.component('app-navbar',{
       return link
     }
   }
-  }
 })
 app.component('app-footer',{
   template:`
