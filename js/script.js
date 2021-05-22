@@ -124,7 +124,7 @@ app.component('app-navbar',{
           text: 'Nosotros'
         },
         {
-          link: 'contact.html'
+          link: 'contact.html',
           text: 'contacto'
         }
       ]
