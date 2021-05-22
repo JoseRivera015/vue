@@ -128,8 +128,8 @@ app.component('app-navbar',{
   },
   computed: {
     location() {
-      let href = window.location.pathname
-      return href
+      let path = window.location.pathname
+      return path.slice(4)
     }
   }
 })
