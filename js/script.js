@@ -104,7 +104,7 @@ app.component('app-navbar',{
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li v-for="item in nav" class="nav-item">
-              <a class="nav-link" :href="item.link">{{ item.text }}</a>
+              <a class="nav-link" :href="location(item.link)">{{ item.text }}</a>
             </li>
           </ul>
         </div>
@@ -127,6 +127,8 @@ app.component('app-navbar',{
     }
   },
   computed: {
+  },
+  methods: {
     location(link) {
       let prelink = '../'
       let stringToCut = '/vue/'
@@ -140,9 +142,7 @@ app.component('app-navbar',{
       }
       return link
     }
-  },
-  methods: {
-
+  }
   }
 })
 app.component('app-footer',{
