@@ -121,11 +121,15 @@ app.component('app-navbar',{
         },
         {
           link: 'about.html', 
-          text: 'Nosotros'
+          text: 'Sobre mi'
+        },
+        {
+          link: 'blog.html', 
+          text: 'Blog'
         },
         {
           link: 'contact.html',
-          text: 'contacto'
+          text: 'Contacto'
         }
       ]
     }
