@@ -134,7 +134,7 @@ app.component('app-navbar',{
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li v-for="item in nav" class="nav-item d-flex">
+            <li v-for="item in nav" class="nav-item d-flex align-items-center">
               <i :class="item.icon" class="me-2"></i>
               <a class="nav-link" :href="location(item.link)">{{ item.text }}</a>
             </li>
