@@ -21,7 +21,7 @@
           <div class="col-lg-8">
             <h2 class="fw-bold">Novedades</h2>
             <p>Read more at hacks.mozilla.org</p>
-            <app-simple-card v-for="card in cards" :card="card" class="mb-3"></app-simple-card>
+            <app-simple-card  v-for="card in cards" :item="card" class="mb-3"></app-simple-card>
           </div>
           <div class="col-lg-4">
             <list-group-card :card="about"></list-group-card>
@@ -51,6 +51,18 @@
             },
             cards: [
              {
+                title: 'Improving Firefox stability on Linux',
+                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
+                link: 'posts/JavaScriptNotesForProfessionals.html',
+                date : 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
+              },
+              {
+                title: 'Introducing Firefox’s new Site Isolation Security Architecture',
+                text: 'Like any web browser, Firefox loads code from untrusted and potentially hostile websites and runs it on your computer. To protect you against new types of attacks from malicious sites and to meet the security principles of Mozilla, we set out to redesign Firefox on desktop.The post Introducing Firefox’s new Site Isolation Security Architecture appeared first on Mozilla Hacks - the Web developer blog.',
+                link: 'posts/JavaScriptNotesForProfessionals.html',
+                date : 'Posted Tuesday, May 18, 2021 by Anny Gakhokidze'
+              },
+              {
                 title: 'JavaScript Notes for Professionals',
                 text: 'Adaptacion del manual de Javascript, en html.',
                 link: 'posts/JavaScriptNotesForProfessionals.html',

@@ -37,16 +37,13 @@ app.component('app-card',{
   `
 })
 app.component('app-simple-card',{
-  props: ['card'],
+  props: ['item'],
   template: `
-    <div class="card bg-dark">
-      <div class="card-body">
-        <a :href="card.link" class="card-title h3">{{ card.title }}</a>
-        <p class="card-text">{{ card.text }}</p>
-      </div>
-      <div class="card-footer text-muted">
-          {{ card.date }}
-        </div>
+    <div>
+        <a :href="item.link" class="card-title h3 ">{{ item.title }}</a>
+        <p class="card-text">{{ item.text }}</p>
+        <div class="text-muted fst-italic my-3">{{ item.date }}</div>
+        <hr/>
     </div>
   `
 })
