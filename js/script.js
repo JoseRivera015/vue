@@ -39,12 +39,12 @@ app.component('app-card',{
 app.component('app-simple-card',{
   props: ['item'],
   template: `
-    <div>
+    <article>
         <a :href="item.link" class="card-title h3 ">{{ item.title }}</a>
         <p class="card-text">{{ item.text }}</p>
         <div class="text-muted fst-italic my-3">{{ item.date }}</div>
         <hr/>
-    </div>
+    </article>
   `
 })
       //other
@@ -112,12 +112,14 @@ app.component('app-carousel',{
 app.component('app-jumbotron',{
   props: ['jumbotron'],
   template: `
-    <div class="p-4 mb-3 rounded-3 bg-dark text-light">
-      <div class="lead display-4">
-        {{ jumbotron.title }}
+    <div class="py-5 mb-3 rounded-3 bg-dark text-light">
+      <div class="container">
+        <div class="lead display-4">
+          {{ jumbotron.title }}
+        </div>
+        <hr>
+        <p>{{ jumbotron.text }}</p>
       </div>
-      <hr>
-      <p>{{ jumbotron.text }}</p>
     </div>
   `
 })
