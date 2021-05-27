@@ -22,6 +22,13 @@ app.component('app-btn',{
     <app-link class="btn btn-primary" :link="button.link" role="button">{{ button.text }}</app-link>
   `
 })
+app.component('h2-title',{
+  template: `
+    <h2 class="fw-bold border-bottom">
+      <slot></slot>
+    </h2>
+  `
+})
 //cards
 app.component('app-card',{
   props: ['card'],
