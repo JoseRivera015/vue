@@ -22,6 +22,13 @@ app.component('app-btn',{
     <app-link class="btn btn-primary" :link="button.link" role="button">{{ button.text }}</app-link>
   `
 })
+app.component('h1-title',{
+  template: `
+    <h1 class="fw-bold border-bottom">
+      <slot></slot>
+    </h1>
+  `
+})
 app.component('h2-title',{
   template: `
     <h2 class="fw-bold border-bottom">
@@ -134,7 +141,9 @@ app.component('app-navbar',{
   template: `
     <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark mb-2">
       <div class="container-fluid d-flex align-items-center">
-        <a class="navbar-brand" href="#">{{ brand }}</a>
+        <a class="navbar-brand p-0" href="#">
+         <img :src="brand" alt="JRM">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -153,7 +162,7 @@ app.component('app-navbar',{
   `,
   data() {
     return {
-      brand: 'JRM',
+      brand: 'images/logo.svg',
       nav: [
         {
           icon: 'bi bi-house-door-fill',

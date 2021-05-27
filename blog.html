@@ -15,13 +15,39 @@
     <div id="app">
       <app-navbar></app-navbar>
       <div class="container my-3">
-        <h2>Blog</h2>
+        <h1-title>Blog</h1-title>
+        <h2-title>Desarrollo</h2-title>
+        <app-simple-card  v-for="item in development" :item="item" class="mb-3"></app-simple-card>
       </div>
       <app-footer></app-footer>
     </div>
     <script>
       
       const rootComponent = {
+        data() {
+          return {
+            development:[
+              {
+                title: 'Improving Firefox stability on Linux',
+                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
+                link: 'posts/JavaScriptNotesForProfessionals.html',
+                date : 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
+              },
+              {
+                title: 'Introducing Firefox’s new Site Isolation Security Architecture',
+                text: 'Like any web browser, Firefox loads code from untrusted and potentially hostile websites and runs it on your computer. To protect you against new types of attacks from malicious sites and to meet the security principles of Mozilla, we set out to redesign Firefox on desktop.The post Introducing Firefox’s new Site Isolation Security Architecture appeared first on Mozilla Hacks - the Web developer blog.',
+                link: 'posts/JavaScriptNotesForProfessionals.html',
+                date : 'Posted Tuesday, May 18, 2021 by Anny Gakhokidze'
+              },
+              {
+                title: 'JavaScript Notes for Professionals',
+                text: 'Adaptacion del manual de Javascript, en html.',
+                link: 'posts/JavaScriptNotesForProfessionals.html',
+                date : 'hoy'
+              }
+            ]
+          }
+        }
       }
       const app = Vue.createApp(rootComponent)
     </script>
