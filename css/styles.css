@@ -1,5 +1,5 @@
 .bg-black{
-  background: black;
+  background: black !important;
 }
 .bg-img-cover{
   background-image: url('../images/banner.jpg'); 

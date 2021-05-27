@@ -40,7 +40,7 @@ app.component('app-simple-card',{
   props: ['item'],
   template: `
     <article>
-        <a :href="item.link" class="card-title h3 ">{{ item.title }}</a>
+        <a :href="item.link" class="card-title h3 text-decoration-none">{{ item.title }}</a>
         <p class="card-text">{{ item.text }}</p>
         <div class="text-muted fst-italic my-3">{{ item.date }}</div>
         <hr/>
@@ -60,13 +60,13 @@ app.component('list-group-flush',{
 app.component('list-group-card',{
   props: ['card'],
   template: `
-  <div :card="card" class="card bg-dark">
+  <div :card="card" class="card bg-black">
     <div class="card-body">
       <h5 class="card-title fw-bold h2">{{ card.title }}</h5>
       <p class="card-text">{{ card.body }}</p>
     </div>
     <ul class="list-group list-group-flush" >
-      <li class="list-group-item bg-dark text-light" v-for="(item, index) in card.list">
+      <li class="list-group-item bg-black text-light" v-for="(item, index) in card.list">
       <a :href="item.link">{{ item.text }}</a>
       </li>
     </ul>
@@ -76,7 +76,7 @@ app.component('list-group-card',{
 app.component('kitchen-sink',{
   props: ['card'],
   template: `
-    <div :card="card" class="card bg-dark" style="width: 18rem;">
+    <div :card="card" class="card bg-black" style="width: 18rem;">
       <img :src="card.image" class="card-img-top" :alt="card.alt">
       <div class="card-body">
         <h5 class="card-title">{{ card.title }}</h5>

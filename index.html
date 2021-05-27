@@ -24,7 +24,12 @@
             <app-simple-card  v-for="card in cards" :item="card" class="mb-3"></app-simple-card>
           </div>
           <div class="col-lg-4">
-            <list-group-card :card="about"></list-group-card>
+            <h5 class="card-title fw-bold h2">{{ about.title }}</h5>
+            <p class="card-text">{{ about.body }}</p>           
+            <div v-for="item in about.list" >
+              <a :href="item.link" class="text-decoration-none">{{ item.text }}</a>
+              <hr class="my-2">
+            </div>
           </div>
         </div>   
       </div>
