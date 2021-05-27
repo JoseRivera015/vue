@@ -2,7 +2,7 @@
   background: black;
 }
 .bg-img-cover{
-  background-image: url('images/banner.jpg'); 
+  background-image: url('../images/banner.jpg'); 
   background-repeat: no-repeat; 
   background-size: cover; 
   background-position: bottom;
