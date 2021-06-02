@@ -142,7 +142,7 @@ app.component('app-navbar',{
     <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark mb-2">
       <div class="container-fluid d-flex align-items-center">
         <a class="navbar-brand" href="#">
-         <img style="height:30px;" :src="brand" alt="JRM">
+         <img style="height:30px;" :src="location(brand)" alt="JRM">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
