@@ -141,8 +141,8 @@ app.component('app-navbar',{
   template: `
     <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark mb-2">
       <div class="container-fluid d-flex align-items-center">
-        <a class="navbar-brand" href="#">
-         <img style="height:30px;" :src="location(brand)" alt="JRM">
+        <a class="navbar-brand" :href="location(nav[0].link)">
+           <img style="height:30px;" :src="location(brand)" alt="JRM">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -192,6 +192,7 @@ app.component('app-navbar',{
   methods: {
     location(link) {
       let prelink = '../'
+      //let stringToCut = '/storage/emulated/0/Android/data/me.sheimi.sgit/files/repo/vue/'
       let stringToCut = '/vue/'
       let str =  window.location.pathname.slice(stringToCut.length)
       for (count = 0, i = 0; i < str.length; i++) {

@@ -3,18 +3,22 @@
 
 <head>
   <meta charset="UTF-8">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../css/styles.css">
   <title>PRELIMINARES</title>
 </head>
 
 <body class="bg-black text-light" style="padding-top:3rem">
-  <div class="container">
+  <div id="app">
+  <app-navbar></app-navbar>
+  <div v-pre class="container">
     <h2>ALGEBRA</h2>
     <p>es la rama de la Matemática que estudia la cantidad considerada del modo más general posible.</p>
     <h2>CARÁCTER DEL ÁLGEBRA Y SU DIFERENCIA CON LA ARITMÉTICA</h2>
@@ -267,6 +271,12 @@
       que elevada al cuadrado reproduce la cantidad <var>a</var>; <math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="true"><mroot><mi>b</mi><mn>3</mn></mroot></mstyle></math> equivale a <strong>raíz cúbica</strong> de <var>b</var>, o sea la
       cantidad que elevada al cubo reproduce la cantidad <var>b</var>.</p>
   </div>
+  </div>
+    <script>
+      const rootComponent = {}
+      const app = Vue.createApp(rootComponent)
+    </script>
+    <script src="../../js/script.js"></script>
 </body>
 
 </html>
