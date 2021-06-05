@@ -126,7 +126,7 @@ app.component('app-carousel',{
 app.component('app-jumbotron',{
   props: ['jumbotron'],
   template: `
-    <div class="py-5 mb-3 rounded-3 bg-dark text-light">
+    <div class="py-3 mb-3 rounded-3 bg-dark text-light">
       <div class="container">
         <div class="lead display-4">
           {{ jumbotron.title }}
