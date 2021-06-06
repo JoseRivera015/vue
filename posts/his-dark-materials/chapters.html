@@ -27,11 +27,11 @@
         </h2>
         <div :id="'collapse'+index" class="accordion-collapse collapse bg-dark" :aria-labelledby="'heading'+index" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <p>{{ item.body }}</p>
             <video controls preload="none" :poster="item.poster" class="w-100">
               <source :src="item.video">
                 <track kind='subtitles' srclang='es' :src='item.subtitle'>
             </video>
+            <p>{{ item.body }}</p>
           </div>
         </div>
       </div>
