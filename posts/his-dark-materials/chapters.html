@@ -39,120 +39,116 @@
   </main>
   </div>
   <script>
-    const rootComponent = {
-      data() {
-        return {
-          cards: [
-            {
-              title: '1. Lyra\'s Jordan',
-              body: 'Lyra Belacqua crece como pupila del Jordan College en Oxford. Sus amigos más cercanos son su daimonion Pantalaimon y un niño sirviente llamado Roger Parslow. Lyra admira a su tío Lord Asriel, un explorador polar cuya investigación sobre el Polvo y el multiverso es considerada herética por el Magisterio gobernante. Lyra salva a Asriel de ser envenenado por el Maestro del Jordan College, quien prevé la importancia futura de Lyra a través del aletiómetro. Después de que Asriel se vaya a otra expedición polar, el Maestro hace arreglos para que Lyra sea adoptada por Marisa Coulter, una aventurera. Marisa se ofrece a entrenar a Lyra como su protegida en Londres. Los misteriosos «Gobblers» secuestran a Roger y a un niño giptano llamado Billy Costa. El Maestro le da a Lyra el aletiómetro para protegerse, pero le advierte que no le diga a nadie, incluyendo a Marisa, que lo tiene. Lyra acompaña a Marisa a Londres, enamorada de la carismática exploradora y con la esperanza de encontrar a Roger. Los giptanos también viajan a Londres en busca de los Gobblers.',
-              video: 'https://www.googleapis.com/drive/v3/files/1YBtNy3pgNjkN6MayBNFMDAkirrQ3aL3L?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap1.jpg',
-              subtitle: 'subs/cap1.vtt'
-            },
-            {
-              title: '2. The Idea of North',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1-fB0D4kCYCBWw7rBnd3K7VGbCSDC5bLd?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap2.jpg',
-              subtitle: 'subs/cap2.vtt'
-            },
-            {
-              title: '3. The Spies',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1KIapTRAHkoySe4pqGa4JnLKOvmf7YKva?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap3.jpg',
-              subtitle: 'subs/cap3.vtt'
-            },
-            {
-              title: '4. Armour',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1YDCx6qIXDrFzKmJF3Umer_OoFN4qW98u?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap4.jpg',
-              subtitle: 'subs/cap4.vtt'
-            },
-            {
-              title: '5. The Lost Boy',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1OJc2MhKcWZ-wqxk-RYJ8DLjVF3sF1EKa?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap5.jpg',
-              subtitle: 'subs/cap5.vtt'
-            },
-            {
-              title: '6. The Daemon-Cages',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1dZSY8r7kKdh7lZMzcmg-50LxJ_PrdWUT?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap6.jpg',
-              subtitle: 'subs/cap6.vtt'
-            },
-            {
-              title: '7. The Fight to the Death',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1gCeZWKhq6b-84XVOKFW40tBR8was8wt3?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap7.jpg',
-              subtitle: 'subs/cap7.vtt'
-            },
-            {
-              title: '8. Betrayal',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1fwLvgnd_STheOVp6ev4mHH2YBB5ek5b6?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap8.jpg',
-              subtitle: 'subs/cap8.vtt'
-            },
-            {
-              title: '9. The City of Magpies',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/15JBPARxbKNLkb6eSeoN4iYRv0I3NG7BJ?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap9.jpg',
-              subtitle: 'subs/cap9.vtt'
-            },
-            {
-              title: '10. The cave',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1leGUT5TxWK-eL7uDonLALRl_jDDo5PAB?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap10.jpg',
-              subtitle: 'subs/cap10.vtt'
-            },
-            {
-              title: '11. Theft',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1jxFrN7iGyDPeQ9znMHutBIzVRgRtaxEt?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap11.jpg',
-              subtitle: 'subs/cap11.vtt'
-            },
-            {
-              title: '12. Tower of the Angels',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1xgU4cZKWWlrQgM4n-20rbmQOaHUGe8gz?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap12.jpg',
-              subtitle: 'subs/cap12.vtt'
-            },
-            {
-              title: '13. The Scholar',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1Ll0LTy0T41OGeTgzJP4DhpRpUY2QR_fo?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap13.jpg',
-              subtitle: 'subs/cap13.vtt'
-            },
-            {
-              title: '14. Malice',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1OjzXqqE2FHSXK-jrNTc0Sl2ptqM-X0s7?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap14.jpg',
-              subtitle: 'subs/cap14.vtt'
-            },
-            {
-              title: '15. Æsahættr',
-              body: '',
-              video: 'https://www.googleapis.com/drive/v3/files/1qmF7z9DiJjJv8zqIvPNgOxQBezXTDOSS?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
-              poster: 'images/posterCap15.jpg',
-              subtitle: 'subs/cap15.vtt'
-            }
-          ]
+    let chapters = {
+      cards: [
+        {
+          title: '1. Lyra\'s Jordan',
+          body: 'Lyra Belacqua crece como pupila del Jordan College en Oxford. Sus amigos más cercanos son su daimonion Pantalaimon y un niño sirviente llamado Roger Parslow. Lyra admira a su tío Lord Asriel, un explorador polar cuya investigación sobre el Polvo y el multiverso es considerada herética por el Magisterio gobernante. Lyra salva a Asriel de ser envenenado por el Maestro del Jordan College, quien prevé la importancia futura de Lyra a través del aletiómetro. Después de que Asriel se vaya a otra expedición polar, el Maestro hace arreglos para que Lyra sea adoptada por Marisa Coulter, una aventurera. Marisa se ofrece a entrenar a Lyra como su protegida en Londres. Los misteriosos «Gobblers» secuestran a Roger y a un niño giptano llamado Billy Costa. El Maestro le da a Lyra el aletiómetro para protegerse, pero le advierte que no le diga a nadie, incluyendo a Marisa, que lo tiene. Lyra acompaña a Marisa a Londres, enamorada de la carismática exploradora y con la esperanza de encontrar a Roger. Los giptanos también viajan a Londres en busca de los Gobblers.',
+          video: 'https://www.googleapis.com/drive/v3/files/1YBtNy3pgNjkN6MayBNFMDAkirrQ3aL3L?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap1.jpg',
+          subtitle: 'subs/cap1.vtt'
+        },
+        {
+          title: '2. The Idea of North',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1-fB0D4kCYCBWw7rBnd3K7VGbCSDC5bLd?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap2.jpg',
+          subtitle: 'subs/cap2.vtt'
+        },
+        {
+          title: '3. The Spies',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1KIapTRAHkoySe4pqGa4JnLKOvmf7YKva?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap3.jpg',
+          subtitle: 'subs/cap3.vtt'
+        },
+        {
+          title: '4. Armour',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1YDCx6qIXDrFzKmJF3Umer_OoFN4qW98u?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap4.jpg',
+          subtitle: 'subs/cap4.vtt'
+        },
+        {
+          title: '5. The Lost Boy',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1OJc2MhKcWZ-wqxk-RYJ8DLjVF3sF1EKa?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap5.jpg',
+          subtitle: 'subs/cap5.vtt'
+        },
+        {
+          title: '6. The Daemon-Cages',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1dZSY8r7kKdh7lZMzcmg-50LxJ_PrdWUT?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap6.jpg',
+          subtitle: 'subs/cap6.vtt'
+        },
+        {
+          title: '7. The Fight to the Death',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1gCeZWKhq6b-84XVOKFW40tBR8was8wt3?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap7.jpg',
+          subtitle: 'subs/cap7.vtt'
+        },
+        {
+          title: '8. Betrayal',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1fwLvgnd_STheOVp6ev4mHH2YBB5ek5b6?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap8.jpg',
+          subtitle: 'subs/cap8.vtt'
+        },
+        {
+          title: '9. The City of Magpies',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/15JBPARxbKNLkb6eSeoN4iYRv0I3NG7BJ?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap9.jpg',
+          subtitle: 'subs/cap9.vtt'
+        },
+        {
+          title: '10. The cave',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1leGUT5TxWK-eL7uDonLALRl_jDDo5PAB?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap10.jpg',
+          subtitle: 'subs/cap10.vtt'
+        },
+        {
+          title: '11. Theft',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1jxFrN7iGyDPeQ9znMHutBIzVRgRtaxEt?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap11.jpg',
+          subtitle: 'subs/cap11.vtt'
+        },
+        {
+          title: '12. Tower of the Angels',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1xgU4cZKWWlrQgM4n-20rbmQOaHUGe8gz?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap12.jpg',
+          subtitle: 'subs/cap12.vtt'
+        },
+        {
+          title: '13. The Scholar',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1Ll0LTy0T41OGeTgzJP4DhpRpUY2QR_fo?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap13.jpg',
+          subtitle: 'subs/cap13.vtt'
+        },
+        {
+          title: '14. Malice',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1OjzXqqE2FHSXK-jrNTc0Sl2ptqM-X0s7?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap14.jpg',
+          subtitle: 'subs/cap14.vtt'
+        },
+        {
+          title: '15. Æsahættr',
+          body: '',
+          video: 'https://www.googleapis.com/drive/v3/files/1qmF7z9DiJjJv8zqIvPNgOxQBezXTDOSS?alt=media&key=AIzaSyBsEwK2OX1vYW0q3stYkAVQovDuTCnIN_U',
+          poster: 'images/posterCap15.jpg',
+          subtitle: 'subs/cap15.vtt'
         }
-      }
+      ]
     }
-    const app = Vue.createApp(rootComponent)
+  let root = chapters
   </script>
   <script src="../../js/script.js"></script>
 </body>
