@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@next"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Blog - JRM Diseño Web</title>
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-  <body class="bg-black text-light padding-top-navbar">
-    <div id="app">
-      <app-navbar></app-navbar>
-      <div class="container my-3">
-        <h1 class="fw-bold">Blog</h1>
-        <h2-title>Desarrollo</h2-title>
-        <app-simple-card  v-for="item in development" :item="item" class="mb-3"></app-simple-card>
-      </div>
-      <app-footer></app-footer>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@next"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Blog - JRM Diseño Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-black text-light padding-top-navbar">
+  <div id="app">
+    <app-navbar></app-navbar>
+    <div class="container my-3">
+      <h1 class="fw-bold">Blog</h1>
+      <h2-title>Desarrollo</h2-title>
+      <app-simple-card v-for="item in development" :item="item" class="mb-3"></app-simple-card>
     </div>
-    <script> 
-      let blog = {
-        development:[
-          {
-            title: 'His Dark Materials',
-            text: 'La materia oscura (en inglés, His Dark Materials) es una serie de televisión de fantasía británica basada en la serie de novelas del mismo nombre de Philip Pullman. Está producida por New Line Cinema y Jane Tranter y Julie Gardner de Bad Wolf para BBC One y HBO, siendo esta última la encargada de su distribución internacional.',
-            link: 'posts/his-dark-materials/chapters.html',
-            date : 'Publicado Sábado, 5 de junio, 2021'
-          },
-          {
-            title: 'JavaScript Notes for Professionals',
-            text: 'Adaptacion del manual de Javascript, en html.',
-            link: 'posts/JavaScriptNotesForProfessionals.html',
-            date : 'hoy'
-          },
-          {
-            title: 'Algebra de Baldor',
-            text: 'Adaptación de algunos capitulos del libro Algebra de Baldor para practicar el uso de algunas etiquetas poco comunes de HTML',
-            link: 'posts/baldor-algebra/baldor.html',
-            date : 'Publicado Miercoles, 2 de junio, 2021'
-          },
-          {
-            title: 'Algebra de Baldor, preliminares',
-            text: 'Adaptación de algunos capitulos del libro Algebra de Baldor para practicar el uso de algunas etiquetas poco comunes de HTML',
-            link: 'posts/baldor-algebra/preliminares.html',
-            date : 'Publicado Miercoles, 2 de junio, 2021'
-          }
-        ]
+    <app-footer></app-footer>
+  </div>
+  <script>
+    let blog = {
+      data() {
+        return {
+          development: [
+            {
+              title: 'His Dark Materials',
+              text: 'La materia oscura (en inglés, His Dark Materials) es una serie de televisión de fantasía británica basada en la serie de novelas del mismo nombre de Philip Pullman. Está producida por New Line Cinema y Jane Tranter y Julie Gardner de Bad Wolf para BBC One y HBO, siendo esta última la encargada de su distribución internacional.',
+              link: 'posts/his-dark-materials/chapters.html',
+              date: 'Publicado Sábado, 5 de junio, 2021'
+            },
+            {
+              title: 'JavaScript Notes for Professionals',
+              text: 'Adaptacion del manual de Javascript, en html.',
+              link: 'posts/JavaScriptNotesForProfessionals.html',
+              date: 'hoy'
+            },
+            {
+              title: 'Test',
+              text: 'Aqui probaré funcionalidades experimentales (peligro)',
+              link: 'posts/test.html',
+              date: 'Publicado Jueves, 10 de junio, 2021'
+            },
+            {
+              title: 'Algebra de Baldor, preliminares',
+              text: 'Adaptación de algunos capitulos del libro Algebra de Baldor para practicar el uso de algunas etiquetas poco comunes de HTML',
+              link: 'posts/baldor-algebra/preliminares.html',
+              date: 'Publicado Miercoles, 2 de junio, 2021'
+            }
+          ]
+        }
       }
-      let root = blog
-    </script>
-    <script src="js/script.js"></script>
-  </body>
+    }
+    let rootComponent = blog
+  </script>
+  <script src="js/script.js"></script>
+</body>
+
 </html>

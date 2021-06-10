@@ -1,95 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/vue@next"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Test</title>
-    <link rel="stylesheet" href="../css/styles.css">
-  </head>
-  <body class="bg-black text-light" style="padding-top:3rem">
-    <div id="app">
-      <app-navbar></app-navbar>
-      <div class="container my-3">
-        <div class="row">
-          <div class="col-lg-8">
-            <h2 class="fw-bold">Hacks Blog</h2>
-            <p>Read more at hacks.mozilla.org</p>
-            <app-simple-card v-for="card in cards" :card="card" class="mb-3"></app-simple-card>
-          </div>
-          <div class="col-lg-4">
-            <list-group-card :card="about"></list-group-card>
-          </div>
-        </div>
-        
-        
 
-      </div>
-      
-      <app-footer></app-footer>
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@next"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Test</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="bg-black text-light" style="padding-top:3rem">
+  <div id="app">
+    <app-navbar></app-navbar>
+    <div class="container my-3">
+      <h1>Ahorros</h1>
+      <button @click="download(this.list,  'json.txt')" type="button" class="btn btn-dark">Descargar</button>
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Concepto</th>
+            <th scope="col">Monto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item,index) in list">
+            <th scope="row">{{ index + 1 }}</th>
+            <td>{{ item.date }}</td>
+            <td>{{ item.concept }}</td>
+            <td>{{ item.amount }}</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row" colspan="3">Total:</th>
+            <td>{{ totalSavings }}</td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
-    <script>
-      
-      const rootComponent = {
-        data() {
-          return {
-            cards: [
-              {
-                title: 'Improving Firefox stability on Linux',
-                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
-                link: '#',
-                date: 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
-              },
-              {
-                title: 'Improving Firefox stability on Linux',
-                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
-                link: '#',
-                date: 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
-              },
-              {
-                title: 'Improving Firefox stability on Linux',
-                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
-                link: '#',
-                date: 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
-              },
-              {
-                title: 'Improving Firefox stability on Linux',
-                text: 'Roughly a year ago at Mozilla we started an effort to improve Firefox stability on Linux. This effort quickly became an example of good synergies between FOSS projects.The post Improving Firefox stability on Linux appeared first on Mozilla Hacks - the Web developer blog.',
-                link: '#',
-                date: 'Posted Wednesday, May 19, 2021 by Gabriele Svelto'
-              }
-            ],
-            about: {
-              title: 'Help improve MDN Web Docs',
-              body: 'All parts of MDN (docs and the site itself) are created by an open community of developers. Please join us! Pick one of these ways to help:',
-              list: [
-                {
-                  link: '#',
-                  text: 'Getting started'
-                },
-                {
-                  link: '#',
-                  text: 'Contributing to MDN content'
-                },
-                {
-                  link: '#',
-                  text: 'Contributing to the MDN codebase'
-                },
-                {
-                  link: '#',
-                  text: 'Updating browser compatibility data'
-                }
-              ]
+    <app-footer></app-footer>
+  </div>
+  <script>
+    let savings = {
+      data() {
+        return {
+          list: [
+            {
+              amount: 1400,
+              concept: 'valor inicial',
+              date: '12/06/2021'
+            },
+            {
+              amount: -50,
+              concept: 'pago de gas recibo 100383934',
+              date: '12/06/2021'
             }
-          }
+          ]
         }
+      },
+      computed: {
+        totalSavings() {
+          return this.list.map(item => item.amount).reduce((accumulator, currentValue) => accumulator + currentValue)
+        }
+      },
+      methods:{
+        download(data, fileName) {
+          let content = JSON.stringify(data);
+          let a = document.createElement('a')
+          let file = new Blob([content], {type: 'text/plain'})
+          a.href = URL.createObjectURL(file)
+          a.download = fileName
+          a.click()
+        }  
       }
-      const app = Vue.createApp(rootComponent)
-    </script>
-    <script src="../js/script.js"></script>
-  </body>
+    }
+    let rootComponent = savings
+  </script>
+  <script src="../js/script.js"></script>
+</body>
+
 </html>

@@ -1,8 +1,3 @@
-const rootComponent = {
-  data() {
-    return root
-  }
-}
 const app = Vue.createApp(rootComponent)
 app.component('h1-title',{
   template: `
