@@ -19,7 +19,28 @@
     <div class="container my-3">
       <h1>Ahorros</h1>
       <button @click="download(this.list)" type="button" class="btn btn-dark">Descargar</button>
-      <input type="file" name="avatar" accept=".json">
+      <input @change="upload" type="file">
+      <form class="review-form" @submit.prevent="onSubmit">
+        <div class="row">
+          <div class="col-12 col-sm-4">
+            <label for="date">Fecha:</label> <br>
+            <input id="date" v-model="item.date" placeholder="fecha">
+          </div>
+          <div class="col-12 col-sm-4">
+            <label for="concept">Concepto:</label> <br>
+            <input id="concept" v-model="item.concept" placeholder="concepto">
+          </div>
+          <div class="col-12 col-sm-4">
+            <label for="amount">Monto:</label> <br>
+            <input id="amount" v-model.number="item.amount" placeholder="monto">
+          </div>
+          <div class="col-12 col-sm-4">
+             <input type="submit" value="Insertar">
+          </div>
+           
+        </div>
+          
+      </form>
       <table class="table table-dark table-striped">
         <thead>
           <tr>
@@ -51,16 +72,16 @@
     let savings = {
       data() {
         return {
+          item: {
+            amount: null,
+            concept: null,
+            date: null
+          },
           list: [
             {
-              amount: 1400,
-              concept: 'valor inicial',
-              date: '12/06/2021'
-            },
-            {
-              amount: -50,
-              concept: 'pago de gas recibo 100383934',
-              date: '12/06/2021'
+              amount: null,
+              concept: null,
+              date: null
             }
           ]
         }
@@ -72,14 +93,25 @@
       },
       methods:{
         download(data) {
-          let content = JSON.stringify(data, null, 2);       
+          let content = JSON.stringify(data, null, 2)       
           let a = document.createElement('a')
           let file = new Blob([content], {type: 'application/json'})
           a.href = URL.createObjectURL(file)
           a.download = 'data.json'
           a.click()
           console.log(a.href)
-        }  
+        },
+        upload(ev) {
+          const file = ev.target.files[0]
+          const reader = new FileReader()
+          reader.onload = e => {
+            this.list = JSON.parse(e.target.result)
+          }
+          reader.readAsText(file)
+        },
+        onSubmit() {
+          this.list.push(this.item)
+        }
       }
     }
     let rootComponent = savings
