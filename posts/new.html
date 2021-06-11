@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <a id="downloadAnchorElem" href="#">descarga</a>
   <script>
     let list = [
       {
@@ -22,14 +23,10 @@
 }
 ]
     let download = (data) => {
-      let content = JSON.stringify(data, null, 2);
-      let a = document.createElement('a')
-      let file = new Blob([content], { type: 'text/plain;charset=UTF-8' })
-      a.href = URL.createObjectURL(file)
-      a.download = 'data.txt'
-      a.innerText = 'descarga'
-      document.body.appendChild(a);
-      console.log(content)
+      var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+      var dlAnchorElem = document.getElementById('downloadAnchorElem');
+      dlAnchorElem.setAttribute("href", dataStr);
+      dlAnchorElem.setAttribute("download", "scene.json");
     }
     download(list)
   </script>
