@@ -76,7 +76,7 @@
           let a = document.createElement('a')
           let file = new Blob([content], {type: 'text/json'})
           a.href = URL.createObjectURL(file)
-          a.download = 'data.json'
+          //a.download = 'data.json'
           a.click()
           console.log(a.href)
         }  
