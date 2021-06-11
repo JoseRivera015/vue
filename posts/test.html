@@ -19,6 +19,8 @@
     <div class="container my-3">
       <h1>Ahorros</h1>
       <button @click="download(this.list)" type="button" class="btn btn-dark">Descargar</button>
+      <input type="file" name="avatar"
+       accept="application/json">
       <table class="table table-dark table-striped">
         <thead>
           <tr>
@@ -73,9 +75,9 @@
         download(data) {
           let content = JSON.stringify(data, null, 2);
           let a = document.createElement('a')
-          let file = new Blob([content], {type: 'text/plain;charset=UTF-8'})
+          let file = new Blob([content], {type: 'application/json'})
           a.href = URL.createObjectURL(file)
-          a.download = 'data.txt'
+          a.download = 'data.json'
           a.click()
         }  
       }
