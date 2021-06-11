@@ -73,13 +73,17 @@
       methods:{
         download(data) {
           let content = JSON.stringify(data, null, 2);
+        
           let a = document.createElement('a')
           let file = new Blob([content], {type: 'text/json'})
-          a.href = URL.createObjectURL(file)
-          //a.download = 'data.json'
-          a.innerText = 'descargar'
-          document.body.appendChild(a);
+          
+          a.href = window.URL.createObjectURL(file)
+          a.download = 'data.json'
+          a.dataset.downloadurl = ["text/json", a.download, a.href].join(":");
+          a.innerText = 'sdasd'
           //a.click()
+          document.body.appendChild(a);
+  
           console.log(a.href)
         }  
       }
