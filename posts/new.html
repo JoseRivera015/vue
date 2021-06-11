@@ -22,6 +22,16 @@
         date: '12/06/2021'
 }
 ]
+let download = (data) => {
+          let content = JSON.stringify(data, null, 2);
+          let a = document.createElement('a')
+          let file = new Blob([content], {type: 'text/json'})
+          a.href = URL.createObjectURL(file)
+          //a.download = 'data.txt'
+          a.target = "_blank"
+          a.click()
+        }  
+        download(list)
   </script>
 </body>
 
