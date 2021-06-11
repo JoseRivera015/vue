@@ -18,8 +18,7 @@
     <app-navbar></app-navbar>
     <div class="container my-3">
       <h1>Ahorros</h1>
-      <a class="btn btn-dark m-2" @click="download(this.list)" href="#" role="button">descargar</a>
-      <button  type="button" class="btn btn-dark">Descargar</button>
+      <button  type="button" @click="download(this.list)" class="btn btn-dark mb-2 me-2">Descargar</button>
       <table class="table table-dark table-striped">
         <thead>
           <tr>
@@ -72,18 +71,12 @@
       },
       methods:{
         download(data) {
-          let content = JSON.stringify(data, null, 2);
-        
+          let content = JSON.stringify(data, null, 2);       
           let a = document.createElement('a')
-          let file = new Blob([content], {type: 'text/json'})
-          
-          a.href = window.URL.createObjectURL(file)
+          let file = new Blob([content], {type: 'application/json'})
+          a.href = URL.createObjectURL(file)
           a.download = 'data.json'
-          a.dataset.downloadurl = ["text/json", a.download, a.href].join(":");
-          a.innerText = 'sdasd'
-          //a.click()
-          document.body.appendChild(a);
-  
+          a.click()
           console.log(a.href)
         }  
       }
