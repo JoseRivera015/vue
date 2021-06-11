@@ -75,9 +75,8 @@
           let a = document.createElement('a')
           let file = new Blob([content], {type: 'text/plain;charset=UTF-8'})
           a.href = URL.createObjectURL(file)
-          a.download = 'data.text'
+          a.download = 'data.txt'
           a.click()
-          console.log(content)
         }  
       }
     }
