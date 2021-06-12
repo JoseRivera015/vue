@@ -110,7 +110,12 @@
           reader.readAsText(file)
         },
         onSubmit() {
-          this.list.push(this.item)
+          let current = {
+            amount: this.item.amount,
+            concept: this.item.concept,
+            date: this.item.date
+          }
+          this.list.push(current)
         }
       }
     }
