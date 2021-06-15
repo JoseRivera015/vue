@@ -1,3 +1,15 @@
+::root {
+  --primary-hs: 0 50%;
+
+  --clr-primary-100: hsl(var(--primary-hs) 90%);
+  --clr-primary-200: hsl(var(--primary-hs) 80%);
+  --clr-primary-500: hsl(var(--primary-hs) 53%);
+  --clr-primary-800: hsl(var(--primary-hs) 20%);
+  --clr-primary-900: hsl(var(--primary-hs) 10%);
+}
+.bg-dark{
+  background-color: var(--clr-primary-900) !important;
+}
 .bg-black{
   background: black !important;
 }
