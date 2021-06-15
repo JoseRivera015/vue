@@ -1,4 +1,4 @@
-::root {
+:root {
   --primary-hs: 0 50%;
 
   --clr-primary-100: hsl(var(--primary-hs) 90%);
