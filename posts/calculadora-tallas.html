@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@next"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Pantalón de Damas - Patronaje</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="bg-black text-light" style="padding-top:3rem">
+  <div id="app">
+    <app-navbar></app-navbar>
+    <div class="container my-3">
+      <h1 class="lead display-4 text-center">Pantalón de Damas</h1>
+      <div class="row">
+        <div class="col-6 mb-3">
+          <label for="parte" class="form-label">Selecciona la talla</label>
+          <select @change="actualizarTalla" v-model="selected" id="parte" class="form-select bg-dark text-light" style="width: 100px;">
+            <option v-for="medida in medidas" :value="medida.talla">{{ medida.talla }}</option>
+          </select>
+         </div>
+      </div>
+      <h2>Pantalón de dama talla {{ medidas[tallaActual].talla }}</h2>
+      <h3>Procedimiento</h3>
+      <ol>
+        <li>Formar um angulo recto = A</li>
+        <li>A<i class="bi bi-arrow-down"></i>B alto de tiro ({{ medidas[tallaActual].altoTiro }} cm.)</li>
+        <li>A<i class="bi bi-arrow-down"></i>C largo del pantalon ({{ medidas[tallaActual].largoPantalon - 3 }} cm.)</li>
+        <li>B<i class="bi bi-arrow-up"></i>D 1/6 de cad. ({{ medidas[tallaActual].alturaCadera }} cm.)</li>
+        <h4>Ubicación de la línea de la Rodilla</h4>
+        <li><span style="text-decoration: overline;">DC</span>/2 = E ({{ lineaRodilla }} cm.)</li>
+        <li>Formación de líneas bases<br>
+          A = Línea de cintura<br>
+          B = Línea de tiro<br>
+          C = Línea de largo<br>
+          D = Línea de cadera<br>
+          E = Línea de rodilla
+        </li>
+      </ol>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  <script>
+    let calculadora = {
+      data() {
+        return {
+          selected: 'S',
+          tallaActual: 0,
+          medidas: [
+            {
+              talla: 'S',
+              contornoCinturaDelantera: 19,
+              contornoCinturaEspalda: 22,
+              contornoCaderaDelantera: 24,
+              contornoCaderaEspalda: 25,
+              altoTiro: 26,
+              alturaCadera: 8,
+              contornoBotapie: 18,
+              contornoRodilla: 20,
+              tiroDelantero: 4.5,
+              tiroEspalda: 5,
+              subidaEspalda: 3,
+              largoPantalon: 98,
+              pinzaEspalda: 12,
+              pretina: 82
+            },
+            {
+              talla: 'M',
+              contornoCinturaDelantera: 20,
+              contornoCinturaEspalda: 23,
+              contornoCaderaDelantera: 25,
+              contornoCaderaEspalda: 26,
+              altoTiro: 27,
+              alturaCadera: 8.3,
+              contornoBotapie: 19,
+              contornoRodilla: 21,
+              tiroDelantero: 4.8,
+              tiroEspalda: 6,
+              subidaEspalda: 3.5,
+              largoPantalon: 100,
+              pinzaEspalda: 13,
+              pretina: 86
+            },
+            {
+              talla: 'L',
+              contornoCinturaDelantera: 21,
+              contornoCinturaEspalda: 24,
+              contornoCaderaDelantera: 26,
+              contornoCaderaEspalda: 27,
+              altoTiro: 28,
+              alturaCadera: 8.6,
+              contornoBotapie: 20,
+              contornoRodilla: 22,
+              tiroDelantero: 5,
+              tiroEspalda: 7,
+              subidaEspalda: 4,
+              largoPantalon: 102,
+              pinzaEspalda: 14,
+              pretina: 90
+            },
+            {
+              talla: 'EX-L',
+              contornoCinturaDelantera: 22,
+              contornoCinturaEspalda: 25,
+              contornoCaderaDelantera: 27,
+              contornoCaderaEspalda: 28,
+              altoTiro: 29,
+              alturaCadera: 9,
+              contornoBotapie: 21,
+              contornoRodilla: 23,
+              tiroDelantero: 5.5,
+              tiroEspalda: 8,
+              subidaEspalda: 4.5,
+              largoPantalon: 104,
+              pinzaEspalda: 14,
+              pretina: 94
+            }
+          ]
+        }
+      },
+      computed: {
+        lineaRodilla() {
+          return (this.medidas[this.tallaActual].largoPantalon - 3 - this.medidas[this.tallaActual].altoTiro + this.medidas[this.tallaActual].alturaCadera) / 2
+        }
+      },
+      methods: {
+        actualizarTalla() {
+          switch (this.selected) {
+            case 'S':
+              this.tallaActual = 0
+              break;
+            case 'M':
+              this.tallaActual = 1
+              break;
+            case 'L':
+              this.tallaActual = 2
+              break;
+            case 'EX-L':
+              this.tallaActual = 3
+              break;
+            default:
+              this.tallaActual = 0
+          }
+        }
+      }
+    }
+    let rootComponent = calculadora
+  </script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

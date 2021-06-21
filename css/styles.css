@@ -14,10 +14,13 @@
   
   
 }
-.bg-dark{
+.bg-dark, .btn-dark{
   background-color: var(--clr-primary-900) !important;
 }
-a {
+.btn-primary {
+  background-color: var(--clr-primary-500);
+}
+a{
   color: var(--clr-primary-600);
 }
 a:active, a:focus{
@@ -26,7 +29,7 @@ a:active, a:focus{
 .bg-black{
   background-color: var(--clr-primary-950) !important;
 }
-.accordion-button:focus, .navbar-toggler:focus{
+.accordion-button:focus, .navbar-toggler:focus, .btn-dark:focus{
   box-shadow: 0px 0px 0px 4px hsla(var(--primary-hs) 50%, 0.4);
 }
 .accordion-button::after, .accordion-button:not(.collapsed)::after{
