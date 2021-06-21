@@ -29,7 +29,7 @@ a:active, a:focus{
 .bg-black{
   background-color: var(--clr-primary-950) !important;
 }
-.accordion-button:focus, .navbar-toggler:focus, .btn-dark:focus{
+.accordion-button:focus, .navbar-toggler:focus, .btn-dark:focus, .form-select:focus{
   box-shadow: 0px 0px 0px 4px hsla(var(--primary-hs) 50%, 0.4);
 }
 .accordion-button::after, .accordion-button:not(.collapsed)::after{
