@@ -27,22 +27,144 @@
          </div>
       </div>
       <h2>Pantalón de dama talla {{ medidas[tallaActual].talla }}</h2>
-      <h3>Procedimiento</h3>
-      <ol>
-        <li>Formar um angulo recto = A</li>
-        <li>A<i class="bi bi-arrow-down"></i>B alto de tiro ({{ medidas[tallaActual].altoTiro }} cm.)</li>
-        <li>A<i class="bi bi-arrow-down"></i>C largo del pantalon ({{ medidas[tallaActual].largoPantalon - 3 }} cm.)</li>
-        <li>B<i class="bi bi-arrow-up"></i>D 1/6 de cad. ({{ medidas[tallaActual].alturaCadera }} cm.)</li>
-        <h4>Ubicación de la línea de la Rodilla</h4>
-        <li><span style="text-decoration: overline;">DC</span>/2 = E ({{ lineaRodilla }} cm.)</li>
-        <li>Formación de líneas bases<br>
-          A = Línea de cintura<br>
-          B = Línea de tiro<br>
-          C = Línea de largo<br>
-          D = Línea de cadera<br>
-          E = Línea de rodilla
-        </li>
-      </ol>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h3>Procedimiento</h3>
+          <ol>
+            <li>Formar um angulo recto = A</li>
+            <li>A<i class="bi bi-arrow-down"></i>B alto de tiro ({{ medidas[tallaActual].altoTiro }} cm.)</li>
+            <li>A<i class="bi bi-arrow-down"></i>C largo del pantalon ({{ medidas[tallaActual].largoPantalon - 3 }} cm.)</li>
+            <li>B<i class="bi bi-arrow-up"></i>D 1/6 de cad. ({{ medidas[tallaActual].alturaCadera }} cm.)</li>
+            <h4>Ubicación de la línea de la Rodilla</h4>
+            <li><span style="text-decoration: overline;">DC</span>/2 = E ({{ lineaRodilla }} cm.)</li>
+            <li>Formación de líneas bases<br>
+              A = Línea de cintura<br>
+              B = Línea de tiro<br>
+              C = Línea de largo<br>
+              D = Línea de cadera<br>
+              E = Línea de rodilla
+            </li>
+            <h4>Formación de la línea de quiebre o planchado</h4>
+            <li>B<i class="bi bi-arrow-left"></i>B1 1/2 cad. ({{ medidas[tallaActual].contornoCaderaDelantera }} cm.)</li>
+            <li>B1<i class="bi bi-arrow-up"></i>A1</li>
+            <li>B1<i class="bi bi-arrow-left"></i>B2, tiro delantero ({{ medidas[tallaActual].tiroDelantero }} cm)</li>
+            <li><span style="text-decoration: overline;">B-B2</span>/2 = B3</li>
+            <li>B3<i class="bi bi-arrow-up"></i><i class="bi bi-arrow-down"></i> = D1-A2-E1-C1</li>
+            <h4>Formación del tiro, cintura y cadera</h4>
+            <li>A1<i class="bi bi-arrow-right"></i>1 cm. = A3</li>
+            <li>U. A3 - B1 con L. Recta</li>
+            <li>B1<i class="bi bi-arrow-up"></i>4.5 = B4 (P.T.T.) y U B2 - B4 con R.F.</li>
+            <li>A3<i class="bi bi-arrow-right"></i>A4 1/2 cint. ({{ medidas[tallaActual].contornoCinturaDelantera }} cm.)</li>
+            <li>U A4 - D con R. Curva</li>
+            <li>A3 <i class="bi bi-arrow-down"></i> 1 cm., formar el escote de cintura</li>
+            <h4>Formación de la entrepierna y linea de costado</h4>
+            <li>Medir 10 cm. a cada lado de E1 puntos E2 + E3 (ancho del botapié)</li>
+            <li>U E2-C2 y E3-C3 con L.R.</li>
+            <li>U B2-E3 con R.C.</li>
+            <li>B<i class="bi bi-arrow-left"></i>0.5 cm., B4</li>
+            <li>U D-B4-E2 con R.C.</li>
+            <li>Rectificar la basta ({{ medidas[tallaActual].largoPantalon - 3 }} + 3 basta = {{ medidas[tallaActual].largoPantalon}} cm.)</li>
+          </ol>
+        </div>
+        <div class="col-12 col-md-6">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="511.717px" height="1020px" viewBox="0 0 511.717 1020" enable-background="new 0 0 511.717 1020" xml:space="preserve">
+<g id="trazados">
+	
+		<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="403.744" y1="225.092" x2="174.113" y2="225.092"/>
+	
+		<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="403.744" y1="605.885" x2="164.594" y2="605.885"/>
+	<polyline fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" points="403.744,309.328 262.172,309.328 
+		174.113,309.328 129.112,309.328 	"/>
+	<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="403.744" y1="49.119" x2="174.113" y2="49.119"/>
+	
+		<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="403.744" y1="986.097" x2="177.721" y2="986.097"/>
+	<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="403.744" y1="49.119" x2="403.744" y2="986.097"/>
+	<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="174.113" y1="309.328" x2="174.113" y2="49.119"/>
+	<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="262.172" y1="986.097" x2="262.172" y2="49.119"/>
+	<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="174.113" y1="309.328" x2="188.826" y2="49.119"/>
+	<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" d="M176.907,259.912
+		c-2.729,48.252-47.795,49.416-47.795,49.416"/>
+	<polyline fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" points="354.126,605.885 335.95,986.097 
+		335.95,1017.834 178.153,1017.834 178.153,986.097 164.594,605.885 	"/>
+	<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" d="M367.972,49.119
+		c24.809,50.196,35.772,133.854,35.772,175.973"/>
+	<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" d="M187.896,62.678
+		c34.208,9.241,148.343-1.062,180.075-13.559"/>
+	<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" d="M3.333,214.128
+		c170.78-32.6,155.202,309.54,161.26,391.756"/>
+	<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" d="M403.744,225.092
+		c0,17.309-6.405,60.427-10.099,84.236c-9.214,59.404-35.304,208.352-39.52,296.557"/>
+	
+		<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="6" x1="176.939" y1="952.067" x2="403.744" y2="952.067"/>
+	<g>
+		<g>
+			<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="3.333" y1="227.255" x2="7.404" y2="244.789"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="34.6783,34.6783" x1="15.247" y1="278.569" x2="121.12" y2="734.597"/>
+			<polyline fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" points="125.042,751.486 129.112,769.021 
+				147.112,769.021 			"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" x1="152.411" y1="769.021" x2="170.411" y2="769.021"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" d="M415.281,199.132
+				c1.021-6.191,2.078-12.094,3.164-17.722"/>
+			<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="38.4758,38.4758" d="
+				M427.119,143.931c6.934-25.006,14.393-41.965,21.321-53.466"/>
+			<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" d="M460.033,75.176
+				c8.952-8.946,15.253-8.946,15.253-8.946v18"/>
+			
+				<line fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="35.9899,35.9899" x1="475.286" y1="120.22" x2="475.286" y2="822.023"/>
+			<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" d="M475.286,840.019v18
+				c0,0-7.072,0.919-17.952-0.535"/>
+			<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="28.7069,28.7069" d="
+				M429.791,849.717c-22.146-9.744-47.745-30.25-65.458-72.945"/>
+			<path fill="none" stroke="#CCCCCC" stroke-width="2" stroke-miterlimit="10" d="M359.283,763.334
+				c-1.845-5.434-3.569-11.176-5.157-17.244"/>
+		</g>
+	</g>
+</g>
+<g id="texto">
+	<text transform="matrix(1 0 0 1 407.3496 986.0967)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">C (95 cm.)</text>
+	<text transform="matrix(1 0 0 1 407.3496 605.8848)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">E (38 cm.)</text>
+	<text transform="matrix(1 0 0 1 407.3496 309.3281)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">B(26 cm.)</text>
+	<text transform="matrix(1 0 0 1 364.4023 302.2969)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">B4</text>
+	<text transform="matrix(1 0 0 1 223.876 329.0889)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">cad. (24 cm.)</text>
+	<text transform="matrix(1 0 0 1 218.3232 408.916)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">Delantero</text>
+	<text transform="matrix(1 0 0 1 177.7207 329.0889)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">B1</text>
+	<text transform="matrix(1 0 0 1 183.3457 268.5078)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">B4</text>
+	<text transform="matrix(1 0 0 1 137.6211 329.0889)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">4.5</text>
+	<text transform="matrix(1 0 0 1 95.5039 303.9902)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">B2</text>
+	<text transform="matrix(1 0 0 1 266.2842 296.4902)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">B3</text>
+	<text transform="matrix(1 0 0 1 266.2842 219.1772)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">D1</text>
+	<text transform="matrix(1 0 0 1 266.4277 595.6426)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">E1</text>
+	<text transform="matrix(1 0 0 1 131.4199 604.2969)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">E3</text>
+	<text transform="matrix(1 0 0 1 354.127 599.1055)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">E2</text>
+	<text transform="matrix(1 0 0 1 178.1533 597.9512)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">10 cm.</text>
+	<text transform="matrix(1 0 0 1 190.2695 983.3594)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">9 cm.</text>
+	<text transform="matrix(1 0 0 1 316.623 1008.457)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">3</text>
+	<text transform="matrix(1 0 0 1 301.6221 597.9512)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">10</text>
+	<text transform="matrix(1 0 0 1 266.2842 976.4365)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">C1</text>
+	<text transform="matrix(1 0 0 1 149.4502 981.6289)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">C3</text>
+	<text transform="matrix(1 0 0 1 339.8457 981.6289)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">C2</text>
+	<text transform="matrix(1 0 0 1 266.4277 46.0894)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">A2</text>
+	<text transform="matrix(1 0 0 1 207.9375 19.6934)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">1/2 cint. (19 cm.)</text>
+	<text transform="matrix(1 0 0 1 358.5977 46.0894)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">A4</text>
+	<text transform="matrix(1 0 0 1 192.5762 46.0894)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">A3</text>
+	<text transform="matrix(1 0 0 1 187.8965 66.23)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">1</text>
+	<text transform="matrix(1 0 0 1 145.8418 46.0894)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">A1</text>
+	<text transform="matrix(1 0 0 1 175.5918 46.0894)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">1</text>
+	<text transform="matrix(1 0 0 1 376.7715 270.6719)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">8</text>
+	<text transform="matrix(1 0 0 1 407.3496 225.0918)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">D</text>
+	<text transform="matrix(1 0 0 1 407.3496 49.1191)" fill="#B3B3B3" font-family="'ArialMT'" font-size="14">A</text>
+</g>
+</svg>
+        </div>
+      </div>
+     
     </div>
     <app-footer></app-footer>
   </div>
@@ -127,6 +249,9 @@
       computed: {
         lineaRodilla() {
           return (this.medidas[this.tallaActual].largoPantalon - 3 - this.medidas[this.tallaActual].altoTiro + this.medidas[this.tallaActual].alturaCadera) / 2
+        },
+        lineaQuiebre() {
+          return (this.medidas[this.tallaActual].contornoCaderaDelantera + this.medidas[this.tallaActual].tiroDelantero) / 2
         }
       },
       methods: {
