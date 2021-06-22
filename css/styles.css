@@ -12,6 +12,7 @@
   --clr-primary-800: hsl(var(--primary-hs) 20%);
   --clr-primary-900: hsl(var(--primary-hs) 10%);
   --clr-primary-950: hsl(var(--primary-hs) 5%); 
+  
 }
 .table-dark {
 	--bs-table-bg: var(--clr-primary-900);
