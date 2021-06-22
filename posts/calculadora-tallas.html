@@ -18,73 +18,75 @@
     <app-navbar></app-navbar>
     <div class="container my-3">
       <h1 class="lead display-4 text-center">Pantalón de Damas</h1>
-      <h2>Tabla de medidas adaptadas del pantalón de damas</h2>   
-      <table class="table table-dark table-striped">
-        <thead>
-          <tr>
-            <th scope="row">Medidas/Talla</th>
-            <th scope="col" v-for="medida in medidas">{{ medida.talla }}</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Contorno de cintura delantera</th>
-            <td v-for="medida in medidas">{{ medida.contornoCinturaDelantera }}</td>
-          </tr>      
-          <tr>
-            <th scope="row">Contorno de cintura espalda</th>
-            <td v-for="medida in medidas">{{ medida.contornoCinturaEspalda }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Contorno de cadera delantera</th>
-            <td v-for="medida in medidas">{{ medida.contornoCaderaDelantera }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Contorno de cadera espalda</th>
-            <td v-for="medida in medidas">{{ medida.contornoCaderaEspalda }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Alto de tiro</th>
-            <td v-for="medida in medidas">{{ medida.altoTiro }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Altura de cadera</th>
-            <td v-for="medida in medidas">{{ medida.alturaCadera }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Contorno de botapié</th>
-            <td v-for="medida in medidas">{{ medida.contornoBotapie }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Contorno de rodilla</th>
-            <td v-for="medida in medidas">{{ medida.contornoRodilla }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Tiro delantero</th>
-            <td v-for="medida in medidas">{{ medida.tiroDelantero }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Tiro espalda</th>
-            <td v-for="medida in medidas">{{ medida.tiroEspalda }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Subida espalda</th>
-            <td v-for="medida in medidas">{{ medida.subidaEspalda }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Largo de pantalón (con basta 3 cm.)</th>
-            <td v-for="medida in medidas">{{ medida.largoPantalon }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Pinza espalda</th>
-            <td v-for="medida in medidas">{{ medida.pinzaEspalda }}</td>   
-          </tr>
-          <tr>
-            <th scope="row">Pretina</th>
-            <td v-for="medida in medidas">{{ medida.pretina }}</td>   
-          </tr>
-        </tbody>
-      </table>
+      <h2>Tabla de medidas adaptadas del pantalón de damas</h2> 
+      <div class="table-responsive">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="row">Medidas/Talla</th>
+              <th scope="col" v-for="medida in medidas">{{ medida.talla }}</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Contorno de cintura delantera</th>
+              <td v-for="medida in medidas">{{ medida.contornoCinturaDelantera }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Contorno de cintura espalda</th>
+              <td v-for="medida in medidas">{{ medida.contornoCinturaEspalda }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Contorno de cadera delantera</th>
+              <td v-for="medida in medidas">{{ medida.contornoCaderaDelantera }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Contorno de cadera espalda</th>
+              <td v-for="medida in medidas">{{ medida.contornoCaderaEspalda }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Alto de tiro</th>
+              <td v-for="medida in medidas">{{ medida.altoTiro }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Altura de cadera</th>
+              <td v-for="medida in medidas">{{ medida.alturaCadera }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Contorno de botapié</th>
+              <td v-for="medida in medidas">{{ medida.contornoBotapie }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Contorno de rodilla</th>
+              <td v-for="medida in medidas">{{ medida.contornoRodilla }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Tiro delantero</th>
+              <td v-for="medida in medidas">{{ medida.tiroDelantero }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Tiro espalda</th>
+              <td v-for="medida in medidas">{{ medida.tiroEspalda }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Subida espalda</th>
+              <td v-for="medida in medidas">{{ medida.subidaEspalda }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Largo de pantalón (con basta 3 cm.)</th>
+              <td v-for="medida in medidas">{{ medida.largoPantalon }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Pinza espalda</th>
+              <td v-for="medida in medidas">{{ medida.pinzaEspalda }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Pretina</th>
+              <td v-for="medida in medidas">{{ medida.pretina }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>    
       <div class="row">
         <div class="col-6 mb-3">
           <label for="parte" class="form-label">Selecciona la talla</label>
