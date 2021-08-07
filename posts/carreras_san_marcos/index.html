@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <title>Ciencias Económicas y de la Gestión</title>
+</head>
+
+<body class="bg-black text-light padding-top-navbar">
+  <div id="app">
+    <app-navbar></app-navbar>
+    <main class="container py-3">
+      <h1 class="lead display-1">Carreras de Pregrado</h1>
+      <div v-for="area in areas">
+      <h2 class="border-bottom display-4">{{ area.nombre }}</h2>
+      <h3>{{ area.facultades[0].nombre }}</h3>
+      <p>{{ area.facultades[0].descripcion }}</p>
+      <div class="accordion mb-5" id="accordionExample">
+        <div v-for="(carrera, index) in area.facultades[0].carreras" class="accordion-item border-secondary">
+          <h4 class="accordion-header" :id="'heading'+index">
+            <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+index" aria-expanded="false" :aria-controls="'collapse'+index">
+              {{ carrera.nombre }}
+            </button>
+          </h4>
+          <div :id="'collapse'+index" class="accordion-collapse collapse bg-dark" :aria-labelledby="'heading'+index" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <h5>Descripción</h5>
+              <p>{{ carrera.descripcion }}</p>
+              <h5>Grado</h5>
+              <p>{{ carrera.grado }}</p>
+              <h5>Título</h5>
+              <p>{{ carrera.titulo }}</p>
+              <h5>Duración</h5>
+              <p>{{ carrera.duracion }}</p>
+              <h5>Perfil del Egresado</h5>
+              <p>{{ carrera.perfil }}</p>
+              <a :href="carrera.planEstudios">Plan de estudios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    let datos = {
+      data() {
+        return {
+          areas:[
+            {
+            nombre: "Área C, Ingenierías",
+            facultades: [
+              {
+                nombre: "(20) Facultad de Ingeniería de Sistemas e Informática",
+                descripcion: "Fundada en octubre del año 2000, la Facultad de Sistemas e Informática inicia sus actividades con la misión de ser una facultad referente de excelencia y calidad en la formación profesional e investigación en las ingenierías de Sistemas, de Software y de Ciencias de la Computación, reconocida nacional e internacionalmente, que aporta al desarrollo sostenible y tecnológico del país.",
+                carreras: [
+                  {
+                    nombre: "(20.1) Ingeniería de Sistemas",
+                    descripcion: "La Escuela Profesional de Ingeniería de Sistemas tiene como objetivo formar profesionales altamente calificados en soluciones integrales de tecnologías e información, comunicaciones y sistemas de información, capacitados en un pensamiento crítico-analítico basado en estándares internacionales que garanticen términos de calidad competitivos y su incorporación en el mercado internacional.",
+                    grado: "Bachiller en Ingeniería de Sistemas",
+                    titulo: "Ingeniero de Sistemas",
+                    duracion: "5 años",
+                    perfil: "El egresado en Ingeniería de Sistemas diseña, desarrolla y gestiona sistemas de información requeridos por las empresas u otras instituciones. Da soporte técnico especializado a las mismas para el uso eficiente y racional de los recursos de hardware y software; además, apoya en la administración de dichos recursos. Da soporte técnico para el uso interconectado de las redes de datos de las organizaciones y supervisa la instalación de redes, administrando la eficiente operación de comunicación de datos.",
+                    planEstudios: "https://sum.unmsm.edu.pe/loginWebSum/ReportePlanes.htm?lFacultad=20&lEscuela=1&lEspecialidad=0&lPlan=2018"
+                    },
+                  {
+                    nombre: "(20.2) Ingeniería de Software",
+                    descripcion: "La Escuela Profesional de Ingeniería de Software tiene como objetivo formar profesionales altamente calificados en desarrollar productos de software de manera eficiente y efectiva, considerando estándares internacionales de calidad que garanticen el desempeño de calidad y competitivos para el graduado, y facilitar su incorporación en el mercado internacional de la industria del software.",
+                    grado: "Bachiller en Ingeniería de Software",
+                    titulo: "Ingeniero de Software",
+                    duracion: "5 años",
+                    perfil: "El egresado en Ingeniería de Software construye y dirige empresas dedicadas a la investigación, desarrollo y consultoría de software utilizando el conocimiento de emprendimiento tecnológico en la industria de software, con una actitud innovadora y de responsabilidad social. Lidera, planifica, organiza, dirige y controla proyectos de desarrollo de software en base al conocimiento de los principios, estándares y técnicas modernas de la gestión de proyectos con actitud crítica, reflexiva y responsable.",
+                    planEstudios: "https://sum.unmsm.edu.pe/loginWebSum/ReportePlanes.htm?lFacultad=20&lEscuela=2&lEspecialidad=0&lPlan=2018"
+                    }
+                  ]
+                }
+              ]
+          },
+          {
+            nombre: "Area D, Ciencias Económicas y de la Gestión",
+            facultades: [
+              {
+                nombre: "(9) Facultad de Ciencias Administrativas",
+                descripcion: "La Facultad de Ciencias Administrativas es una institución educativa moderna y acreditada internacionalmente por la ACBSP, organización global especializada en evaluación y acreditación de escuelas de negocios. En ella se forman profesionales líderes con valores sólidos que crean valor para las empresas y la sociedad. Cuenta con tres escuelas orientadas a constituir profesionales competitivos, emprendedores y con valores sólidos desarrollando competencias integrales en los estudiantes para que puedan trabajar y liderar de manera moderna, eficiente y eficaz en empresas, instituciones públicas y organismos internacionales.",
+                carreras: [
+                  {
+                    nombre: "(9.1) Administración",
+                    descripcion: "La Escuela Profesional de Administración forma profesionales competitivos, emprendedores y con valores sólidos. Desarrolla competencias integrales en los estudiantes para que puedan trabajar y liderar de manera moderna, eficiente y eficaz en empresas, instituciones públicas y organismos internacionales.",
+                    grado: "Bachiller en Ciencias Administrativas",
+                    titulo: "Licenciado(a) en Administración",
+                    duracion: "5 años",
+                    perfil: "El egresado en Administración planea el desarrollo de una organización para satisfacer las necesidades de sus grupos de interés, diseñando planes estratégicos, programas, proyectos y planes operativos. Organiza una empresa o institución configurando sus sistemas y procesos para el logro de los objetivos y metas adoptados, estableciendo la división de trabajo y los mecanismos de coordinación correspondientes para la adquisición y mejor rendimiento del talento humano y los recursos.",
+                    planEstudios: "https://sum.unmsm.edu.pe/loginWebSum/ReportePlanes.htm?lFacultad=9&lEscuela=1&lEspecialidad=0&lPlan=2018"
+                    },
+                  {
+                    nombre: "(9.3) Administración de Negocios Internacionales",
+                    descripcion: "La Escuela Profesional de Administración de Negocios Internacionales tiene la misión de formar profesionales de Negocios Internacionales del más alto nivel académico y humanístico, capaz de desempeñarse en las empresas y organizaciones que se desarrollan en los mercados y en los negocios internacionales, así como en la investigación, consultoría y docencia.",
+                    grado: "Bachiller en Administración de Negocios Internacionales",
+                    titulo: "Licenciado en Administración de Negocios Internacionales",
+                    duracion: "5 años",
+                    perfil: "Es un profesional capacitado para identificar oportunidades de negocios en los mercados internacionales. Está en condiciones de desarrollar estrategias de negocios en el campo de la exportación e importación considerando los cambios de los factores externos que afectan a los mercados globales. Está capacitado para interpretar y aprovechar las diferencias socioculturales, económicas y tecnológicas de los agentes involucrados en el comercio internacional con el fin de concretar negociaciones internacionales exitosas, entre otras competencias.",
+                    planEstudios: "https://sum.unmsm.edu.pe/loginWebSum/ReportePlanes.htm?lFacultad=9&lEscuela=3&lEspecialidad=0&lPlan=2018"
+                    },
+                  {
+                    nombre: "(9.2) Administración de Turismo",
+                    descripcion: "La Escuela Profesional de Administración de Turismo tiene como misión generar y difundir conocimiento científico tecnológico, y humanístico, formando profesionales con valores, respetuosos de la diversidad cultural y promotores de la identidad nacional basada en una cultura de calidad, desarrollando investigaciones en turismo con responsabilidad social para contribuir en el desarrollo sostenible del país y la sociedad.",
+                    grado: "Bachiller en Administración de Turismo",
+                    titulo: "Licenciado en Administración de Turismo",
+                    duracion: "5 años",
+                    perfil: "El egresado es un Investigador e innovador en busca de nuevos productos o servicios turísticos para atender una demanda. Es emprendedor y domina una serie de herramientas teóricas como habilidades prácticas que le permiten pasar del diseño a la implementación de proyectos de inversión públicos y privados en turismo y gestión del Patrimonio Natural y Cultural. Domina las herramientas de mercadotecnia y de tecnologías de la información que le permiten identificar necesidades de mercado o nichos; con el fin de diseñar, segmentar, posicionar productos o servicios, entre otras competencias.",
+                    planEstudios: "https://sum.unmsm.edu.pe/loginWebSum/ReportePlanes.htm?lFacultad=9&lEscuela=2&lEspecialidad=0&lPlan=2018"
+                    }
+                  ]
+                },
+              {
+                nombre: "Facultad de Ciencias Contables",
+                carreras: [
+                  {
+                    nombre: "",
+                    descripcion: "",
+                    grado: "",
+                    titulo: "",
+                    duracion: "",
+                    perfil: "",
+                    planEstudios: ""
+                    }
+                  ]
+                },
+              {
+                nombre: "Facultad de Ciencias Económicas",
+                carreras: [
+                  {
+                    nombre: "",
+                    descripcion: "",
+                    grado: "",
+                    titulo: "",
+                    duracion: "",
+                    perfil: "",
+                    planEstudios: ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+    let rootComponent = datos
+  </script>
+  <script src="../../js/script.js"></script>
+</body>
+
+</html>
