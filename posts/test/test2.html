@@ -41,7 +41,7 @@
             <span>&nbsp;|&nbsp;</span>
             <a class="text-decoration-none" href="#">Ver todo</a>
           </div>
-            <article class="mb-3 col-sm-6">
+            <article class="mb-3 col-sm-8">
               <div class="position-relative">
                 <div class="small-hover">
                   <img :src="featured.image"class="img-fluid d-block w-100 mb-2"/>    
@@ -51,17 +51,19 @@
               </div>           
               <p class="card-text mb-4">{{ featured.title }}</p>
             </article>
-
-            <article class="mb-3 col-sm-6" v-for="card in news">
+            <div class="col-sm-4">
+            <article class="mb-3 " v-for="card in news">
               <div class="position-relative">
                 <div class="small-hover">
-                  <img :src="card.image"class="img-fluid d-block w-100 mb-2"/>    
+                  <img :src="card.image" class="img-fluid d-block w-100 mb-2" />
                   <div class="dark-layer"></div>
-                </div>                      
+                </div>
                 <span class="bg-dark text-uppercase px-2 py-1 position-absolute bottom-0 start-0 mx-2 my-2">{{ card.category }}</span>
-              </div>           
+              </div>
               <p class="card-text mb-4">{{ card.title }}</p>
-            </article>
+            </article>              
+            </div>
+
 
           
         </div>
