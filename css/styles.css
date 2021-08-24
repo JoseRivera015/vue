@@ -30,6 +30,9 @@ a{
 a:active, a:focus,a:hover{
   color: var(--clr-primary-700);
 }
+.bg-primary{
+  background-color: var(--clr-primary-500) !important;
+}
 .bg-black{
   background-color: var(--clr-primary-950) !important;
 }
