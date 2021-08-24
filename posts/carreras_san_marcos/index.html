@@ -37,7 +37,7 @@
               {{ carrera.nombre }}
             </button>
           </h4>
-          <div :id="'collapse'+carrera.codigo" class="accordion-collapse collapse bg-dark" :aria-labelledby="'heading'+index" data-bs-parent="#accordionExample">
+          <div :id="'collapse'+carrera.codigo" class="accordion-collapse collapse bg-dark" :aria-labelledby="'heading'+index" :data-bs-parent="'#accordionExample'+0">
             <div class="accordion-body">
               <h5>Descripción</h5>
               <p>{{ carrera.descripcion }}</p>
