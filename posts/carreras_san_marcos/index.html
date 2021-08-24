@@ -30,14 +30,18 @@
       <h3>{{ area.facultades[0].nombre }}</h3>
       <img class="fotoFacultad my-3" :src="area.facultades[0].imagen" />
       <p>{{ area.facultades[0].descripcion }}</p>
-      <div class="accordion mb-5" :id="'accordionExample'+index">
+      <div class="accordion mb-5" :id="'accordionExample'+area.facultades[0].codigo">
         <div v-for="(carrera, index) in area.facultades[0].carreras" class="accordion-item border-secondary">
           <h4 class="accordion-header" :id="'heading'+carrera.codigo">
             <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse" :data-bs-target="'#collapse'+carrera.codigo" aria-expanded="false" :aria-controls="'collapse'+carrera.codigo">
               {{ carrera.nombre }}
             </button>
           </h4>
+<<<<<<< HEAD
           <div :id="'collapse'+carrera.codigo" class="accordion-collapse collapse bg-dark" :aria-labelledby="'heading'+index" :data-bs-parent="'#accordionExample'+0">
+=======
+          <div :id="'collapse'+carrera.codigo" class="accordion-collapse collapse bg-dark" :aria-labelledby="'heading'+index" data-bs-parent="'#accordionExample'+area.facultades[0].codigo">
+>>>>>>> 185901b21e8d5b856ad510754bf5b0f2c7543b46
             <div class="accordion-body">
               <h5>Descripción</h5>
               <p>{{ carrera.descripcion }}</p>
@@ -66,6 +70,7 @@
             nombre: "Área C, Ingenierías",
             facultades: [
               {
+                codigo: "20",
                 nombre: "(20) Facultad de Ingeniería de Sistemas e Informática",
                 imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/UNMSM_Facultad_de_Ingenier%C3%ADa_de_Sistemas_e_Inform%C3%A1tica_2019_-_Vista_lateral.jpg/640px-UNMSM_Facultad_de_Ingenier%C3%ADa_de_Sistemas_e_Inform%C3%A1tica_2019_-_Vista_lateral.jpg",
                 descripcion: "Fundada en octubre del año 2000, la Facultad de Sistemas e Informática inicia sus actividades con la misión de ser una facultad referente de excelencia y calidad en la formación profesional e investigación en las ingenierías de Sistemas, de Software y de Ciencias de la Computación, reconocida nacional e internacionalmente, que aporta al desarrollo sostenible y tecnológico del país.",
@@ -98,6 +103,7 @@
             nombre: "Área D, Ciencias Económicas y de la Gestión",
             facultades: [
               {
+                codigo: "9",
                 nombre: "(9) Facultad de Ciencias Administrativas",
                 imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/UNMSM_Facultad_de_Ciencias_Administrativas.jpg/640px-UNMSM_Facultad_de_Ciencias_Administrativas.jpg",
                 descripcion: "La Facultad de Ciencias Administrativas es una institución educativa moderna y acreditada internacionalmente por la ACBSP, organización global especializada en evaluación y acreditación de escuelas de negocios. En ella se forman profesionales líderes con valores sólidos que crean valor para las empresas y la sociedad. Cuenta con tres escuelas orientadas a constituir profesionales competitivos, emprendedores y con valores sólidos desarrollando competencias integrales en los estudiantes para que puedan trabajar y liderar de manera moderna, eficiente y eficaz en empresas, instituciones públicas y organismos internacionales.",
