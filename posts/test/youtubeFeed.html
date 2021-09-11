@@ -31,13 +31,14 @@
       margin-bottom: 10px;
       
     }
-    @media (orientation: landscape) {
+    @media (max-width: 800px) and (orientation: landscape) {
       .media-item {
         flex-direction: row;
         margin-left: 20px;
       }
       .details-container {
         flex-direction: column-reverse;
+        flex-grow: 1;
       }
       .video-thumbnail-container {
         width: 200px;
@@ -54,7 +55,7 @@
 
     .details-container {
       display: flex;
-      margin: 4px 0 16px 12px;
+      margin: 4px 0 16px 0;
       padding-top: 8px;
     }
 
@@ -64,6 +65,9 @@
     }
     .media-item-metadata {
       
+    }
+    .media-channel {
+      margin-left: 12px;
     }
     .media-item-info {
       margin-left: 12px;
