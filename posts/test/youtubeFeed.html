@@ -25,7 +25,24 @@
     a:hover {
       color: currentColor;
     }
-
+    .media-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      
+    }
+    @media (orientation: landscape) {
+      .media-item {
+        flex-direction: row;
+        margin-left: 20px;
+      }
+      .details-container {
+        flex-direction: column-reverse;
+      }
+      .video-thumbnail-container {
+        width: 200px;
+      }
+    }
     .thumbnail-overlay-time-status {
       margin: 5px;
       padding: 1px 4px;
@@ -36,6 +53,7 @@
     }
 
     .details-container {
+      display: flex;
       margin: 4px 0 16px 12px;
       padding-top: 8px;
     }
@@ -45,7 +63,7 @@
       border-radius: 50%;
     }
     .media-item-metadata {
-      flex-grow: 1;
+      
     }
     .media-item-info {
       margin-left: 12px;
@@ -87,7 +105,7 @@
         </div>
       </a>
       <!-- detalles -->
-      <div class="details-container d-flex flex-row">
+      <div class="details-container">
         <div class="media-channel">
           <a :href="item.channelLink">
             <img class="profile-icon-img" alt="" :src="item.channelImg">
@@ -96,7 +114,7 @@
         <!-- contenedor menu metadata -->
         <div class="media-item-info d-flex flex-grow-1">
           <!-- metadata -->
-          <div class="media-item-metadata">
+          <div class="media-item-metadata flex-grow-1">
             <a class="text-decoration-none" :href="item.videoLink">
               <h3 class="media-item-headline">{{ item.videoTitle }}</h3>
               <div class="badge-and-byline">{{ item.channelName }} • {{ item.videoViews  }} • {{ item.releaseDate }}</div>
