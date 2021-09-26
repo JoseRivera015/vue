@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+      :root {
+        --spacer: 1rem;
+      }
+      .bg-dark {
+        background: black;
+      }
+      .text-light {
+        color: white;
+      }
+      .ff-serif {
+        font-family: serif;
+      }
+      .ms-3 {
+        margin-left: var(--spacer) !important;
+      }
+      .ms-4 {
+        margin-left: calc(var(--spacer) * 1.5) !important;
+      }
+      
+      .fw-bold{
+        font-weight: bold;
+      }
+      .text-decoration-underline {
+        text-decoration: underline;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-uppercase {
+        text-transform: uppercase;
+      }
+      .text-capitalize {
+        text-transform: capitalize;
+      }
+      .h6 {
+        font-size: 1rem;
+      }
+    </style>
+</head>
+
+<body class="bg-dark text-light ff-serif">
+  <h1 class="h6 text-uppercase fw-bold">Señora Jueza del tal</h1>
+  <p><span class="fw-bold" id="clientName">Nombre del cliente</span> identificado con DNI N° <span id="dni">00000000</span>, con domicilio en <span id="adress">Domicilio</span>, a usted atentamente digo:</p>
+  <p><span class="fw-bold">Primero.-</span> Que soy propietario del</p>
+  <p><span class="fw-bold text-capitalize">segundo.- </span></p>
+  <p><span class="fw-bold text-uppercase">otrosi digo.- </span></p>
+  <p class="ms-4 fw-bold">Por Tanto</p>
+  <p>Solicito a usted señora Jueza proveer conforme a ley.</p>
+  <p class="ms-4">Lima, <span id="date">fecha</span></p>
+  <script>
+    let clientName = 'Jose Carlos Rivera Melendez'
+    let dni = '07544015'
+    let adress = 'Jr. Meliton Carbajal 591'
+    let date = '22 de setiembre de 2021'
+    document.querySelector('#clientName').innerHTML = clientName
+    document.querySelector('#dni').innerHTML = dni
+    document.querySelector('#adress').innerHTML = adress
+    document.querySelector('#date').innerHTML = date
+  </script>
+</body>
+
+</html>

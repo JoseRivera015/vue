@@ -76,7 +76,10 @@
     .media-item-headline {
       font-size: 14px;
       max-height: 2.5em;
+      
       overflow: hidden;
+      
+      
       margin-bottom: 3px;
     }
 
@@ -120,7 +123,7 @@
           <!-- metadata -->
           <div class="media-item-metadata flex-grow-1">
             <a class="text-decoration-none" :href="item.videoLink">
-              <h3 class="media-item-headline">{{ item.videoTitle }}</h3>
+              <h3 class="media-item-headline">{{ cutString(item.videoTitle, 75) }}</h3>
               <div class="badge-and-byline">{{ item.channelName }} • {{ item.videoViews  }} • {{ item.releaseDate }}</div>
             </a>
           </div>
