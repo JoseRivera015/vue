@@ -72,16 +72,13 @@
   <p>Solicito a Ud. Señor Gerente General de COFOPRI, tener presente lo expuesto y ruego proveer conforme a ley.</p>
   <p class="ms-4">Lima, <span id="date">fecha</span></p>
   <div class="d-flex justify-content-end">
-    <div class="sign-box text-center">_____________________________ <br>
+    <div class="sign-box text-center fw-bold">_____________________________ <br>
       <span id="clientNameSign"></span> <br>
       DNI Nº<span id="clientDniSign"></span>
       
     </div>
   </div>
   <script>
-    let clientName = 'Ema Melendez Atahuaman'
-    let dni = '07544015'
-    let adress = 'Jr. Eduardo Astete Mendoza Manzana  A, Lote 03, esquina con Jr. Cataluña, Pueblo Joven Manuel Medina Paredes, distrito de Santiago de Surco'
     let date = '22 de setiembre de 2021'
     let client = {
       nroDNI: '07544015',
@@ -89,15 +86,17 @@
       apePaterno: 'Melendez',
       apeMaterno: 'Atahuaman',
       direccion: 'Jr. Eduardo Astete Mendoza Manzana  A, Lote 03, esquina con Jr. Cataluña, Pueblo Joven Manuel Medina Paredes, distrito de Santiago de Surco',
-      nombreCompleto: `${this.nombres} ${this.apePaterno} ${this.apeMaterno}`
+      nombreCompleto: function() {
+        return `${this.nombres} ${this.apePaterno} ${this.apeMaterno}`
+      }
     }
-    document.querySelector('#clientName').innerHTML = client.nombreCompleto
-    document.querySelector('#dni').innerHTML = dni
-    document.querySelector('#adress').innerHTML = adress
+    document.querySelector('#clientName').innerHTML = client.nombreCompleto()
+    document.querySelector('#dni').innerHTML = client.nroDNI
+    document.querySelector('#adress').innerHTML = client.direccion
     document.querySelector('#date').innerHTML = date
-    document.querySelector('#adress2').innerHTML = adress
-    document.querySelector('#clientNameSign').innerHTML = clientName
-    document.querySelector('#clientDniSign').innerHTML = dni
+    document.querySelector('#adress2').innerHTML = client.direccion
+    document.querySelector('#clientNameSign').innerHTML = client.nombreCompleto()
+    document.querySelector('#clientDniSign').innerHTML = client.nroDNI
   </script>
 </body>
 
