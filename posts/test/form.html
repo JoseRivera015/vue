@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+   <style>
+     body {
+       background: black;
+       color: white;
+     }
+   </style>
+</head>
+
+<body>
+  <label for="txtNombre">txtNombre</label>
+  <input id="txtNombre" value="" />
+  <button type="button" id="btn">ejecutar</button>
+  <button type="button" id="download">descargar</button>
+  <div id="mostrar">
+    
+  </div>
+  <script>
+    let user = {
+      name: undefined,
+    }
+    let mostrar = (object) => {
+      let nombre = document.querySelector('#txtNombre').value 
+      document.querySelector('#mostrar').innerHTML = nombre
+      object.name = nombre
+    }
+    document.querySelector('#btn').addEventListener('click',() => mostrar(user))
+    
+    function downloadObjectAsJson(exportObj, exportName){
+      var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+      var downloadAnchorNode = document.createElement('a');
+      downloadAnchorNode.setAttribute("href", dataStr);
+      downloadAnchorNode.setAttribute("download", exportName + ".json");
+      document.body.appendChild(downloadAnchorNode); // required for firefox
+      downloadAnchorNode.click();
+      downloadAnchorNode.remove();
+    }
+    
+    document.querySelector('#download').addEventListener('click', () => downloadObjectAsJson(user, 'texto'))
+  </script>
+</body>
+
+</html>
