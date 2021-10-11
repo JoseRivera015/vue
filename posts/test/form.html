@@ -21,6 +21,7 @@
   <div id="mostrar">
     
   </div>
+  <a href="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" download>link</a>
   <script>
     let user = {
       name: undefined,
@@ -33,13 +34,14 @@
     document.querySelector('#btn').addEventListener('click',() => mostrar(user))
     
     function downloadObjectAsJson(exportObj, exportName){
-      var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
-      var downloadAnchorNode = document.createElement('a');
-      downloadAnchorNode.setAttribute("href", dataStr);
-      downloadAnchorNode.setAttribute("download", exportName + ".json");
-      document.body.appendChild(downloadAnchorNode); // required for firefox
-      downloadAnchorNode.click();
-      downloadAnchorNode.remove();
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj));
+    var downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", exportName + ".json");
+    downloadAnchorNode.innerHTML = 'asdf'
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    //downloadAnchorNode.click();
+    //downloadAnchorNode.remove();
     }
     
     document.querySelector('#download').addEventListener('click', () => downloadObjectAsJson(user, 'texto'))
