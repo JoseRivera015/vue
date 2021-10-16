@@ -9,6 +9,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <title>LUZ DEL SUR</title>
     <style>
+      .text-primary {
+        color: #314b75 !important;
+      }
       .list-icon{
         width: 60px;
       }
@@ -30,10 +33,13 @@
 
       }
       .navbar-logo {
-        height: 40px;
+        height: 30px;
       }
       .aside-item {
-        width: 200px;
+        width: 250px;
+      }
+      .footer-bg {
+        background: lightgrey;
       }
     </style>
 </head>
@@ -50,51 +56,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Nosotros
+            <li v-for="li in navbar" class="nav-item" :class="li.items? 'dropdown' : false">
+              <a class="nav-link text-primary fw-bold" :class="li.items? 'dropdown-toggle' : false" :href="!li.items? li.link: '#'" :id="li.id" :role="li.items? 'button' : false" :data-bs-toggle="li.items? 'dropdown' : false" :aria-expanded="li.items? 'false' : false">
+                {{ li.title }}
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Directorio</a></li>
-                <li><a class="dropdown-item" href="#">Presentación General</a></li>
-                <li><a class="dropdown-item" href="#">Organización</a></li>
-                <li><a class="dropdown-item" href="#">Zona de Concesión</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Servicios
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                <li><a class="dropdown-item" href="#">Directorio</a></li>
-                <li><a class="dropdown-item" href="#">Presentación General</a></li>
-                <li><a class="dropdown-item" href="#">Organización</a></li>
-                <li><a class="dropdown-item" href="#">Zona de Concesión</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Socialmente Responsables
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                <li><a class="dropdown-item" href="#">Directorio</a></li>
-                <li><a class="dropdown-item" href="#">Presentación General</a></li>
-                <li><a class="dropdown-item" href="#">Organización</a></li>
-                <li><a class="dropdown-item" href="#">Zona de Concesión</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Accionistas
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                <li><a class="dropdown-item" href="#">Directorio</a></li>
-                <li><a class="dropdown-item" href="#">Presentación General</a></li>
-                <li><a class="dropdown-item" href="#">Organización</a></li>
-                <li><a class="dropdown-item" href="#">Zona de Concesión</a></li>
+              <ul v-if="li.items" class="dropdown-menu" :aria-labelledby="li.id">
+                <li v-for="item in li.items"><a class="dropdown-item" :href="item.link">{{ item.text }}</a></li>
               </ul>
             </li>
           </ul>
@@ -121,34 +88,14 @@
         <img class="aside-item" src="https://www.luzdelsur.com.pe/media/images/plantilla/shortcuts/nuevos/FONOLUZ.png" alt="fonoluz">
       </a>
     </aside>
-    <footer>
-      <nav>
-        <h2>MENÚ PRINCIPAL</h2>
+    <footer class="container footer-bg">
+      <nav v-for="nav in footer">
+        <h2 class="text-primary fs-5">{{ nav.title }}</h2>
         <ul>
-          <li>Inicio</li>
-          <li>Inicio</li>        
+          <li v-for="item in nav.items">
+            <a class="text-secondary" :href="item.link">{{ item.text }}</a>
+          </li>
         </ul>        
-      </nav>
-      <nav>
-        <h2>SERVICIOS</h2>
-        <ul>
-          <li>Acerca de su medidor</li>
-          <li>Lugares de pago</li>        
-        </ul>        
-      </nav>
-      <nav>
-        <h2>ENLACES DE INTERÉS</h2>
-        <ul>
-          <li>Osinergmin</li>
-          <li>Portal FISE</li>        
-        </ul>               
-      </nav>
-      <nav>
-        <h2>Oportunidades de Inversión</h2>
-        <ul>
-          <li>El sur de Lima, Corazón de la ciudad capital</li>
-          <li>Servicios especiales y personalizados para grandes clientes</li>        
-        </ul>               
       </nav>
     </footer>
   </div>
@@ -157,6 +104,35 @@
     const rootComponent = {
       data() {
         return {
+          navbar: [
+            {
+              //id: 'navbarDropdown1',
+              title: 'Inicio',
+              link: 'www.google.com'
+              //items: []
+            },
+            {
+              id: 'navbarDropdown2',
+              title: 'Nosotros',
+              items: [
+                {
+                  link: 'www.google.com',
+                  text: 'nosotros 1'
+                }
+              ]
+            },
+            {
+            id: 'navbarDropdown3',
+            title: 'Servicios',
+            items: [
+            {
+            link: 'www.google.com',
+            text: 'Srevicios 1'
+            }
+            ]
+            } 
+            
+          ],
           items: [
             {
               link: 'https://zsp1.luzdelsur.com.pe/ofvirtual/Account/PagoEnLinea',
@@ -203,6 +179,34 @@
               icon: 'https://www.luzdelsur.com.pe/media/images/plantilla/shortcuts/botones2019/nuevos/preguntas.png',
               text: 'Preguntas Frecuentes'
             },
+          ],
+          footer: [
+            {
+              title: 'MENÚ PRINCIPAL',
+              items: [
+                {
+                  link: '#',
+                  text: 'sub 1'
+                },
+                {
+                  link: '#',
+                  text: 'sub 2'
+                }
+              ]
+            },
+            {
+              title: 'title 2',
+              items: [
+                {
+                  link: '#',
+                  text: 'sub 1'
+                },
+                {
+                  link: '#',
+                  text: 'sub 2'
+                }
+              ]
+            }
           ]
         }
       }
