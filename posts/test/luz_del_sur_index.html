@@ -36,10 +36,17 @@
         height: 30px;
       }
       .aside-item {
-        width: 250px;
+        width: 200px;
       }
       .footer-bg {
         background: lightgrey;
+      }
+      .lst-chevron{
+        list-style-type: "» ";
+      }
+      .lst-chevron ::marker {
+        color: grey;
+        font-style: italic;
       }
     </style>
 </head>
@@ -47,7 +54,7 @@
 <body>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
+      <div class="container-md">
         <a class="navbar-brand" href="#">
           <img class="navbar-logo" src="https://www.luzdelsur.com.pe/media/images/plantilla/logos/logo.png" alt="logo">
         </a>
@@ -68,36 +75,59 @@
         </div>
       </div>
     </nav>
-    <main>
-      <div class="container">
-        <div class="row">
-          <div v-for="item in items" class="col-4 d-flex flex-column align-items-center">
-            <a class="item-list m-2 p-2 fw-bold" :href="item.link">
-              <img class="list-icon d-block m-auto" :src="item.icon" alt="pagos en línea" />
-              <div class="text-center mt-3">{{ item.text }}</div>
-            </a>
-          </div>  
+    <div class="container-md">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.luzdelsur.com.pe/media/images/banners/nuevobanner_fraccion.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.luzdelsur.com.pe/media/images/banners/Arte-SliderMiLectura_AF.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://www.luzdelsur.com.pe/media/images/banners/AFSliderNuevoMedidor.jpg" class="d-block w-100" alt="...">
+          </div>
         </div>
       </div>
-    </main>
-    <aside class="d-flex flex-column align-items-center" >
-      <a class="my-3" href="https://zsp1.luzdelsur.com.pe/ofvirtual/Account/ConsultaRecibos">
-        <img  class="aside-item" src="https://www.luzdelsur.com.pe/media/images/boton_descargaturecibo.png" alt="Descarga tu recibo">
-      </a>
-      <a class="my-3" href="https://www.luzdelsur.com.pe/fonoluz.html">
-        <img class="aside-item" src="https://www.luzdelsur.com.pe/media/images/plantilla/shortcuts/nuevos/FONOLUZ.png" alt="fonoluz">
-      </a>
-    </aside>
-    <footer class="container footer-bg">
-      <nav v-for="nav in footer">
-        <h2 class="text-primary fs-5">{{ nav.title }}</h2>
-        <ul>
-          <li v-for="item in nav.items">
-            <a class="text-secondary" :href="item.link">{{ item.text }}</a>
-          </li>
-        </ul>        
-      </nav>
+      <div class="row">
+        <main class="col-md-8">    
+          <div class="row my-3">
+            <div v-for="item in items" class="col-4 col-sm-3 col-lg-2 d-flex flex-column align-items-center">
+              <a class="item-list m-2 p-2 fw-bold" :href="item.link">
+                <img class="list-icon d-block m-auto" :src="item.icon" alt="pagos en línea" />
+                <div class="text-center mt-3">{{ item.text }}</div>
+              </a>
+            </div>  
+          </div>
+        </main>
+        <aside class="col-md-4 container-md" >
+          <div class="row d-flex justify-content-center">
+            <a class="aside-item my-3 col-6 col-md-12" href="https://zsp1.luzdelsur.com.pe/ofvirtual/Account/ConsultaRecibos">
+              <img  class="d-block w-100" src="https://www.luzdelsur.com.pe/media/images/boton_descargaturecibo.png" alt="Descarga tu recibo">
+            </a>
+            <a class="aside-item my-3 col-6 col-md-12" href="https://www.luzdelsur.com.pe/fonoluz.html">
+              <img class="d-block w-100" src="https://www.luzdelsur.com.pe/media/images/plantilla/shortcuts/nuevos/FONOLUZ.png" alt="fonoluz">
+            </a>
+          </div>
+          
+        </aside>
+      </div>
+    </div>   
+    <footer class="footer-bg">
+      <div class="container-md py-4">
+        <div class="row">
+          <nav class="col-sm-6 col-md-4" v-for="nav in footer">
+            <h2 class="text-primary fs-6 fw-bold text-uppercase">{{ nav.title }}</h2>
+            <ul class="lst-chevron">
+              <li v-for="item in nav.items">
+                <a class="text-secondary fst-italic" :href="item.link">{{ item.text }}</a>
+              </li>
+            </ul>        
+          </nav>  
+        </div>       
+      </div>      
     </footer>
+    <div class="container text-primary fst-italic">©2017 Luz del Sur. Todos los derechos reservados.</div>
   </div>
   
   <script>
@@ -112,26 +142,27 @@
               //items: []
             },
             {
-              id: 'navbarDropdown2',
               title: 'Nosotros',
-              items: [
+              link: 'www.google.com'
+            },
+            {
+              title: 'Servicios',
+              link: 'www.google.com'
+            },
+            {
+              title: 'Socialmente responsables',
+              link: 'www.google.com'
+              /*items: [
                 {
                   link: 'www.google.com',
                   text: 'nosotros 1'
                 }
-              ]
+              ]*/
             },
             {
-            id: 'navbarDropdown3',
-            title: 'Servicios',
-            items: [
-            {
-            link: 'www.google.com',
-            text: 'Srevicios 1'
+              title: 'Accionistas',
+              link: 'www.google.com'
             }
-            ]
-            } 
-            
           ],
           items: [
             {
@@ -179,31 +210,113 @@
               icon: 'https://www.luzdelsur.com.pe/media/images/plantilla/shortcuts/botones2019/nuevos/preguntas.png',
               text: 'Preguntas Frecuentes'
             },
+            {
+              link: 'https://zsp1.luzdelsur.com.pe/ofvirtual/Account/PagoEnLinea',
+              icon: 'https://www.luzdelsur.com.pe/media/images/plantilla/shortcuts/botones2019/nuevos/informacion.png',
+              text: 'Información de Reclamos'
+            }
           ],
           footer: [
             {
-              title: 'MENÚ PRINCIPAL',
+              title: 'Menú principal',
               items: [
                 {
-                  link: '#',
-                  text: 'sub 1'
+                  link: 'https://www.luzdelsur.com.pe/home.html',
+                  text: 'Inicio'
                 },
                 {
-                  link: '#',
-                  text: 'sub 2'
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'Nosotros'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'Servicios'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'Consejos de seguridad'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'Preguntas frecuentes'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/home.html',
+                  text: 'Tarifas'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'Oficina virtual'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'Contáctenos'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'FISE'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'Información y Atención de Reclamos'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'Consulta de Solicitudes'
+                },
+                {
+                  link: 'https://www.luzdelsur.com.pe/nosotros',
+                  text: 'Consultas Osinergmin'
                 }
               ]
             },
             {
-              title: 'title 2',
+              title: 'Servicios',
               items: [
                 {
                   link: '#',
-                  text: 'sub 1'
+                  text: 'Acerca de su medidor'
                 },
                 {
                   link: '#',
-                  text: 'sub 2'
+                  text: 'Lugares de pago'
+                },
+                {
+                  link: '#',
+                  text: 'Clientes Libres'
+                },
+                {
+                  link: '#',
+                  text: 'Sucursales'
+                },
+                {
+                  link: '#',
+                  text: 'Nuestra App'
+                }
+              ]
+            },
+            {
+              title: 'Enlaces de interés',
+              items: [
+                {
+                  link: '#',
+                  text: 'Osinergmin'
+                },
+                {
+                  link: '#',
+                  text: 'Portal FISE'
+                },
+                {
+                  link: '#',
+                  text: 'SNMPE'
+                },
+                {
+                  link: '#',
+                  text: 'SMV - Hechos de Importancia'
+                },
+                {
+                  link: '#',
+                  text: 'SMV - Información Financiera'
                 }
               ]
             }
