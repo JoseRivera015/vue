@@ -21,8 +21,11 @@ const rootComponent = {
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min + 1)) + min;
     },
-    randomCount() {
+    SetRandomCount() {
       this.count = this.getRandomInt(0, this.kiss.length -1)
+    },
+    randomPhrase() {
+      return this.kiss[this.count].phrase
     }
 
   }
