@@ -14,11 +14,11 @@
       .text-light {
         color: white;
       }
-      .btn {
+      /*.btn {
         width: 70px;
         height: 70px;
         margin: 7px;
-      }
+      }*/
       .w-210 {
         width: 260px;
       }
@@ -47,16 +47,30 @@
           <button class="btn btn-primary" type="button">6</button>
           <button class="btn btn-secondary" type="button">-</button>            
       </div>
-      <div class="">
-        <button class="btn btn-primary" type="button">1</button>
-        <button class="btn btn-primary" type="button">2</button>
-        <button class="btn btn-primary" type="button">3</button>
-        <button class="btn btn-secondary" type="button">+</button>
+      <div class="row my-3">
+        <div class="col-3">
+          <button class="btn btn-primary w-100" type="button">1</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-primary w-100" type="button">2</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-primary w-100" type="button">3</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-secondary w-100" type="button">+</button>
+        </div>        
       </div>
-      <div class="row">
-        <div class="col-6 bg-primary m-1">0</div>
-        <div class="col bg-primary m-1">.</div>
-        <div class="col bg-secondary m-1">=</div>      
+      <div class="row my-3">
+        <div class="col-6">
+          <button class="btn btn-primary w-100" type="button">0</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-primary w-100" type="button">.</button>
+        </div>
+        <div class="col-3">
+          <button class="btn btn-primary w-100" type="button">=</button>
+        </div>
       </div>
     </div>
   </div>
