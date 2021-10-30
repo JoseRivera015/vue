@@ -8,6 +8,31 @@
     <script src="https://unpkg.com/vue@next"></script>
     <title>Calculadora</title>
     <style>
+      :root {
+        --primary-hs: 240, 50%,;
+
+        --clr-primary-50: hsl(var(--primary-hs) 95%);
+        --clr-primary-100: hsl(var(--primary-hs) 90%);
+        --clr-primary-200: hsl(var(--primary-hs) 80%);
+        --clr-primary-300: hsl(var(--primary-hs) 70%);
+        --clr-primary-500: hsl(var(--primary-hs) 50%);
+        --clr-primary-600: hsl(var(--primary-hs) 40%);
+        --clr-primary-700: hsl(var(--primary-hs) 30%);
+        --clr-primary-800: hsl(var(--primary-hs) 20%);
+        --clr-primary-900: hsl(var(--primary-hs) 10%);
+        --clr-primary-950: hsl(var(--primary-hs) 5%); 
+        
+      }
+      .bg-dark {
+        background-color: var(--clr-primary-900) !important;
+      }
+      .bg-primary {
+        background-color: var(--clr-primary-800) !important;
+      }
+      .active-primary:active{
+        background-color: var(--clr-primary-500) !important;
+        transition: .2s;
+      }
     </style>
 </head>
 
@@ -22,15 +47,15 @@
         <div class="col bg-secondary border border-dark text-center py-3">/</div>
       </div>
       <div class="row">
-        <div class="col bg-primary border border-dark text-center py-3">7</div>
-        <div class="col bg-primary border border-dark text-center py-3">8</div>
-        <div class="col bg-primary border border-dark text-center py-3">9</div>
+        <div class="col bg-primary border border-dark text-center py-3 active-primary">7</div>
+        <div class="col bg-primary border border-dark text-center py-3 active-primary">8</div>
+        <div class="col bg-primary border border-dark text-center py-3 active-primary">9</div>
         <div class="col bg-secondary border border-dark text-center py-3">*</div>
       </div>
       <div class="row">
-        <div class="col bg-primary border border-dark text-center py-3">4</div>
-        <div class="col bg-primary border border-dark text-center py-3">5</div>
-        <div class="col bg-primary border border-dark text-center py-3">6</div>
+        <div class="col bg-primary border border-dark text-center py-3 active-primary">4</div>
+        <div class="col bg-primary border border-dark text-center py-3 active-primary">5</div>
+        <div class="col bg-primary border border-dark text-center py-3 active-primary">6</div>
         <div class="col bg-secondary border border-dark text-center py-3">-</div>
       </div>
       <div class="row">
