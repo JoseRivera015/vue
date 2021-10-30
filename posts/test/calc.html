@@ -11,79 +11,43 @@
     </style>
 </head>
 
-<body class="bg-dark text-light vh-100 d-flex justify-content-center align-items-center">
-  <div id="app" style="display: block; width: 100%; max-width: 400px">
-    <div class="container text-center">
-      <div class="border border-light rounded p-2 display-2 d-flex align-items-center justify-content-end" style="height: 75px;">656</div>
-      <div class="row my-4">
-        <div class="col-3">
-          <button class="btn btn-secondary w-100" type="button">C</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-secondary w-100" type="button">+/-</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-secondary w-100" type="button">%</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-secondary w-100" type="button">/</button>
-        </div>
-      </div>      
-      <div class="row my-4">
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">7</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">8</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">9</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-secondary w-100" type="button">*</button>
-        </div>
-      </div>      
-      <div class="row my-4">
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">4</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">5</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">6</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-secondary w-100" type="button">-</button>
-        </div>
-      </div>      
-      <div class="row my-4">
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">1</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">2</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">3</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-secondary w-100" type="button">+</button>
-        </div>        
+<body class="bg-dark text-light d-flex justify-content-center align-items-center vh-100">
+  <div id="app" class="container" style="max-width: 400px;">
+    <div class="border border-light rounded p-2 display-5 d-flex justify-content-end align-items-center" style="height: 75px;">656</div>
+    <div class="container" >
+      <div class="row">
+        <div class="col bg-secondary border border-dark text-center py-3">C</div>
+        <div class="col bg-secondary border border-dark text-center py-3">+/-</div>
+        <div class="col bg-secondary border border-dark text-center py-3">%</div>
+        <div class="col bg-secondary border border-dark text-center py-3">/</div>
       </div>
-      <div class="row my-4">
-        <div class="col-6">
-          <button class="btn btn-primary w-100" type="button">0</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-primary w-100" type="button">.</button>
-        </div>
-        <div class="col-3">
-          <button class="btn btn-secondary w-100" type="button">=</button>
-        </div>
+      <div class="row">
+        <div class="col bg-primary border border-dark text-center py-3">7</div>
+        <div class="col bg-primary border border-dark text-center py-3">8</div>
+        <div class="col bg-primary border border-dark text-center py-3">9</div>
+        <div class="col bg-secondary border border-dark text-center py-3">*</div>
+      </div>
+      <div class="row">
+        <div class="col bg-primary border border-dark text-center py-3">4</div>
+        <div class="col bg-primary border border-dark text-center py-3">5/-</div>
+        <div class="col bg-primary border border-dark text-center py-3">6</div>
+        <div class="col bg-secondary border border-dark text-center py-3">-</div>
+      </div>
+      <div class="row">
+        <div class="col bg-primary border border-dark text-center py-3">1</div>
+        <div class="col bg-primary border border-dark text-center py-3">2/-</div>
+        <div class="col bg-primary border border-dark text-center py-3">3</div>
+        <div class="col bg-secondary border border-dark text-center py-3">+</div>
+      </div>
+      <div class="row">
+        <div class="col-6 bg-primary border border-dark text-center py-3">0</div>
+        <div class="col bg-primary border border-dark text-center py-3">.</div>
+        <div class="col bg-secondary border border-dark text-center py-3">=</div>
       </div>
     </div>
   </div>
+  
+  
   <script>
     const rootComponent = {
       data() {
